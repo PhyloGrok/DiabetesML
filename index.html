@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,7 +27,7 @@
 <body class="bg-gray-100">
     <header class="bg-merlot shadow-md py-4">
         <div class="container mx-auto px-4 flex justify-between items-center">
-            <h1 class="text-xl font-semibold text-white">PIMA Indian 0.1.1</h1>
+            <h1 class="text-xl font-semibold text-white">Comparing the Machine Learning Models using Pima Diabetes Dataset</h1>
             <nav class="space-x-4">
                 <a href="#" class="text-merlot-light hover:text-white font-medium">Get started</a>
                 <a href="#" class="text-merlot-light hover:text-white font-medium">Reference</a>
@@ -38,37 +39,200 @@
     <main class="container mx-auto px-4 py-8">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div class="md:col-span-2">
-                <section class="mb-8">
-                    <h2 class="text-2xl font-bold text-gray-800 mb-4">Introduction to PIMA Indian datset</h2>
-                    <p class="text-gray-700">
-                        The Pima Diabetes R package contains two datasets that we believe are a viable
-                        alternative to Anderson's Iris data.
+                <section class="mb-8">   
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Introduction to PIMA Indian datset</h2>
+                <p class="text-gray-700">  
+                    Diabetes is a serious chronic disease characterized by high levels of glucose in the blood, which can result from insufficient insulin production or the body’s inability to effectively use insulin. Its prevalence has nearly doubled since 1980, with 14% of adults aged 18 and older diagnosed with diabetes in 2022, up from 7% in 1990 <span class="citation" data-cites="who_diabetes">(<a href="#ref-who_diabetes" role="doc-biblioref">World Health Organization n.d.</a>)</span>. The disease can lead to severe complications, including blindness, kidney failure, heart attacks, strokes, and lower limb amputations. Early detection allows for timely interventions, reducing complications and healthcare costs, and improving quality of life and long-term outcomes <span class="citation" data-cites="marshall2006prevention">(<a href="#ref-marshall2006prevention" role="doc-biblioref">Marshall and Flyvbjerg 2006</a>)</span>.
+                </p>
+                <p>
+                    Artificial intelligence (AI) leverages computer systems and big data to simulate intelligent behavior with minimal human intervention, and within it, machine learning (ML) is a subset of AI methodologies. Since the rise of AI, Machine learning has increasingly been applied in various areas of disease detection and prevention in the healthcare field <span class="citation" data-cites="bini2018artificial">(<a href="#ref-bini2018artificial" role="doc-biblioref">Bini 2018</a>)</span>. Numerous machine learning techniques have been deployed to develop more efficient and effective methods for diagnosing chronic diseases <span class="citation" data-cites="battineni2020applications">(<a href="#ref-battineni2020applications" role="doc-biblioref">Battineni et al. 2020</a>)</span>. Utilizing machine learning methods in diabetes research has been proven to be a critical strategy or harnessing large volumes of diabetes-related data to extract valuable insights <span class="citation" data-cites="agarwal2022machine">(<a href="#ref-agarwal2022machine" role="doc-biblioref">Agarwal and Vadiwala 2022</a>)</span>.
+                </p>
+
+                <h3>Data Description and Source</h3>
+                <p>
+                    The dataset used for this analysis is the Pima Indians Diabetes Database, sourced from the National Library of Medicine database at the National Institutes of Health.  The primary objective of this dataset is to enable the diagnostic prediction of whether a patient has diabetes based on specific diagnostic measurements. The dataset comprises 768 female patients aged 21 and older, all of Pima Indian heritage, located primarily in the Central and Southern regions of the United States.  The dataset can be found on Kaggle <span class="citation" data-cites="dua2017pima">(<a href="#ref-dua2017pima" role="doc-biblioref">Dua and Graff 2017</a>)</span>.
+                </p>
+
+                <p>
+                    Each row in the dataset represents an individual and includes clinical features such as Age, Body Mass Index (BMI), Blood Pressure, Number of Pregnancies, and Diabetes Pedigree Function (a score indicating the genetic risk of diabetes based on family history). The output variable is a binary indicator of whether the patient is diabetic (1) or non-diabetic (0).
+                </p>
+                <p>
+                    The dataset was originally collected to study diabetes prevalence in a specific population, the Pima Indians.  This population has a high prevalence of type 2 diabetes, making it valuable for research focused on understanding and predicting the disease. The dataset includes several physiological measurements that are commonly used in diabetes diagnosis, allowing for the development of predictive models.
+                </p>
+
+                <p>
+                    The Pima Indians Diabetes Database is a widely used benchmark dataset for machine learning algorithms, particularly for classification tasks.  Its well-defined set of features and clear binary outcome variable make it suitable for evaluating the performance of different models.  Researchers have used this dataset to explore various machine learning techniques for diabetes prediction, including logistic regression, decision trees, and neural networks.
+                </p>
+                <p>
+                    However, the dataset has some limitations.  It focuses solely on women of Pima Indian heritage, which may limit the generalizability of any models developed from it to other populations.  Additionally, the dataset was collected in a specific time and location, and changes in lifestyle, healthcare practices, and diagnostic criteria may affect its relevance to contemporary populations.  Despite these limitations, the Pima Indians Diabetes Database remains a valuable resource for exploring machine learning methods in diabetes research.
+                </p>
+                <p>
+                    In this study, we leverage this dataset to compare the performance of several machine learning models in predicting diabetes.  We aim to provide insights into the effectiveness of these models for early diabetes detection and to identify the key clinical features that contribute to accurate prediction.  The findings of this research can potentially inform the development of clinical decision support tools and improve diabetes screening practices.
+                </p>
+            </section>
+
+            <section id="methods">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Methods</h2>
+                <p>
+                    In this study, we employed a variety of machine learning models to predict the onset of diabetes in Pima Indian women. The analysis was performed using Python <span class="citation" data-cites="Python">(<a href="#ref-Python" role="doc-biblioref">Van Rossum and Drake 2009</a>)</span>, leveraging libraries such as NumPy <span class="citation" data-cites="harris2020array">(<a href="#ref-harris2020array" role="doc-biblioref">Harris et al. 2020</a>)</span>, Pandas <span class="citation" data-cites="pandas">(<a href="#ref-pandas" role="doc-biblioref">McKinney 2010</a>)</span>, and Scikit-learn <span class="citation" data-cites="pedregosa2011scikit">(<a href="#ref-pedregosa2011scikit" role="doc-biblioref">Pedregosa et al. 2011</a>)</span>.  The following section describes the machine learning methodologies utilized.
+                </p>
+
+                <h3>Logistic Regression</h3>
+                <p>
+                    Logistic regression is a statistical model that predicts the probability of a binary outcome.  It models the relationship between the input features and the log-odds of the outcome.  We used logistic regression as a baseline linear model for comparison.
+                </p>
+
+                <h3>K-Means Clustering</h3>
+                <p>
+                    K-Means clustering is an unsupervised learning algorithm that partitions data into k clusters, where each data point belongs to the cluster with the nearest mean (centroid).  We applied K-Means to the dataset to explore potential groupings of individuals based on their clinical features, and then evaluated if those groupings correlated with diabetes.
+                </p>
+
+                <h3>Principal Component Analysis (PCA) followed by K-Means</h3>
+                <p>
+                    Principal Component Analysis (PCA) is a dimensionality reduction technique that transforms high-dimensional data into a lower-dimensional space while retaining the most significant information.  We applied PCA to reduce the dimensionality of the data before performing K-Means clustering.  This was done to potentially improve the clustering performance and to visualize the data in a lower-dimensional space.
+                </p>
+
+                <h3>Isomap followed by K-Means</h3>
+                 <p>
+                    Isometric Mapping (Isomap) is a nonlinear dimensionality reduction technique that preserves the geodesic distances between data points. We applied Isomap to capture non-linear relationships in the data before applying K-Means clustering. This approach is useful when the data lies on a manifold, and linear methods like PCA are not sufficient.
+                </p>
+
+                <h3>Gaussian Naive Bayes</h3>
+                <p>
+                    Gaussian Naive Bayes is a probabilistic classifier based on Bayes' theorem.  It assumes that the features are normally distributed and conditionally independent given the class label.  We used Gaussian Naive Bayes as a simple and efficient non-linear classifier.
+                </p>
+
+                <h3>Shallow and Deep Perceptrons</h3>
+                <p>
+                    We also employed neural networks, specifically shallow and deep perceptrons, to model the relationship between input features and diabetes.  Shallow perceptrons refer to neural networks with a single hidden layer, while deep perceptrons have multiple hidden layers.  Neural networks are capable of learning complex non-linear relationships in the data. We hypothesized that deep perceptrons might capture more intricate patterns in the data compared to simpler models.
+                </p>
+            </section>
+
+            <section id="results">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Results</h2>
+                <p>
+                    This section presents the results of applying the machine learning models described in the Methods section to the Pima Indians Diabetes Dataset.
+                </p>
+
+                <h3 id = "logistic_regression_results">Logistic Regression Results</h3>
+                <p> The logistic regression model achieved an accuracy of 0.75.  The confusion matrix for the test data is shown below. </p>
+                <figure class="figure">
+                    <img src="../results/figures/confusion_matrix_plot.png" alt="Logistic Regression Confusion Matrix">
+                    <figcaption>Logistic Regression Confusion Matrix</figcaption>
+                </figure>
+
+                <h3 id = "kmeans_clustering_results">K-Means Clustering Results</h3>
+                <p> The K-Means model  confusion matrix is shown below. </p>
+                <figure class="figure">
+                    <img src="../results/figures/kmeans_confusion_matrix.png" alt="K-Means Confusion Matrix">
+                    <figcaption>K-Means Confusion Matrix</figcaption>
+                </figure>
+
+                <h3 id = "pca_kmeans_clustering_results">PCA -> K-Means Clustering Results</h3>
+                <p> The PCA followed by K-Means model confusion matrix is shown below. </p>
+                <figure class="figure">
+                    <img src="../results/figures/pca_kmeans_confusion_matrix.png" alt="PCA followed by K-Means Confusion Matrix">
+                    <figcaption>PCA followed by K-Means Confusion Matrix</figcaption>
+                </figure>
+
+                <h3 id = "isomap_kmeans_clustering_results">Isomap -> K-Means Clustering Results</h3>
+                <p> The Isomap followed by K-Means model confusion matrix is shown below. </p>
+                 <figure class="figure">
+                    <img src="../results/figures/isomap_kmeans_confusion_matrix.png" alt="Isomap followed by K-Means Confusion Matrix">
+                    <figcaption>Isomap followed by K-Means Confusion Matrix</figcaption>
+                </figure>
+
+                <h3 id = "gaussian_naive_bayes_results">Gaussian Naive Bayes Results</h3>
+                <p>  The Gaussian Naive Bayes model confusion matrix is shown below.</p>
+                <figure class="figure">
+                    <img src="../results/figures/gaussian_nb_confusion_matrix.png" alt="Gaussian Naive Bayes Confusion Matrix">
+                    <figcaption>Gaussian Naive Bayes Confusion Matrix</figcaption>
+                </figure>
+
+                <h3 id = "shallow_perceptron_results">Shallow Perceptron Results</h3>
+                <p>  The Shallow Perceptron model confusion matrix is shown below. </p>
+                <figure class="figure">
+                    <img src="../results/figures/shallow_nn_confusion_matrix.png" alt="Shallow Perceptron Confusion Matrix">
+                    <figcaption>Shallow Perceptron Confusion Matrix</figcaption>
+                </figure>
+
+                <h3 id = "deep_perceptron_results">Deep Perceptron Results</h3>
+                <p>  The Deep Perceptron model confusion matrix is shown below. </p>
+                <figure class="figure">
+                    <img src="../results/figures/deep_nn_confusion_matrix.png" alt="Deep Perceptron Confusion Matrix">
+                    <figcaption>Deep Perceptron Confusion Matrix</figcaption>
+                </figure>
+
+            </section>
+
+            <section id="discussion">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Discussion</h2>
+                <p>
+                    In this study, we compared the performance of several machine learning models in predicting diabetes in Pima Indian women.
+                </p>
+                 <p>
+                    The Logistic Regression model, a linear classifier, achieved a reasonable accuracy.  However, it may not be capable of capturing complex non-linear relationships within the data.
+                </p>
+                <p>
+                    The K-Means clustering, an unsupervised method, showed limited success in this classification task.  This suggests that the inherent structure of the data, as perceived by K-Means, does not align well with the binary diabetic/non-diabetic outcome.
+                </p>
+                <p>
+                    Dimensionality reduction with PCA or Isomap, followed by K-Means, did not substantially improve the clustering performance.  This indicates that reducing the data's dimensionality, whether linearly or non-linearly, did not help K-Means to better separate the two classes.
+                </p>
+                <p>
+                    The Gaussian Naive Bayes model, although simple and efficient, relies on strong assumptions of feature independence and normality, which might not hold true for this dataset.
+                </p>
+                <p>
+                    The shallow and deep perceptrons, both neural network models, demonstrated the potential of neural networks to learn complex patterns.  The deep perceptron, with its multiple layers, was expected to outperform the shallow perceptron by capturing more intricate feature interactions.
+                </p>
+
+                <p>
+                    Further work might explore more sophisticated neural network architectures, hyperparameter optimization, and feature engineering to improve predictive performance.  Ensemble methods, which combine multiple models, could also be investigated.
+                </p>
+            </section>
+
+            <section id="conclusion">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Conclusion</h2>
+                <p>
+                   This study compared several machine learning models. The models were able to predict diabetes.
+                </p>
+            </section>
+
+            <section id="acknowledgements">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Acknowledgements</h2>
+                    <p>
+                        We would like to acknowledge the Merck data science fellowship, UMBC CNMS, and BTEC423 course for their support and resources.
                     </p>
-                </section>
-                <section class="mb-8">
-                    <h2 class="text-2xl font-bold text-gray-800 mb-4">Meet the People</h2>
-                    <p class="text-gray-700">
-                        The  PIMA Indian data contains.
-                    </p>
-                    <div class="flex space-x-4 mt-4">
-                        <span class="bg-merlot-light text-merlot px-3 py-1 rounded-full text-sm font-semibold">CHINSTRAP</span>
-                        <span class="bg-merlot-light text-merlot px-3 py-1 rounded-full text-sm font-semibold">GENTOO</span>
-                        <span class="bg-merlot-light text-merlot px-3 py-1 rounded-full text-sm font-semibold">ADELIE</span>
+            </section>
+
+            <section id="references" class="unnumbered">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">References</h2>
+                 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+                <div id="ref-agarwal2022machine" class="csl-entry" role="listitem">
+                <div class="csl-left-margin">Agarwal, Shivam, and Mitesh Vadiwala. 2022. &#8220;Machine Learning in Diabetes Research.&#8221; In <i>Machine Learning and Deep Learning in Medical Imaging</i>, 149&#8211;68. Chapman and Hall/CRC.
+                </div>
+                </div>
+                <div id="ref-battineni2020applications" class="csl-entry" role="listitem">
+                <div class="csl-left-margin">Battineni, G., N. Chintalapudi, and P. A. Geetha. 2020. &#8220;Applications of Machine Learning in Chronic Disease Prediction.&#8221; <i>Journal of King Saud University-Computer and Information Sciences</i> 32 (7): 818&#8211;24.
+                </div>
+                </div>
+                <div id="ref-bini2018artificial" class="csl-entry" role="listitem">
+                <div class="csl-left-margin">Bini, Car
                     </div>
                 </section>
             </div>
             <div class="md:col-span-1">
-                <div class="bg-white rounded-lg shadow-md p-4">
-                    <h3 class="text-lg font-semibold text-gray-800 mb-2">On this page</h3>
-                    <nav class="space-y-2">
-                        <a href="#Orginal Dataset Repo" class="block text-blue-600 hover:text-blue-800 hover:underline text-sm">Meet the People</a>
-                        <a href="#installation" class="block text-blue-600 hover:text-blue-800 hover:underline text-sm">Installation</a>
-                        <a href="#Pima Diabetes-package" class="block text-blue-600 hover:text-blue-800 hover:underline text-sm">The PIMA Indian package</a>
-                        <a href="#highlights" class="block text-blue-600 hover:text-blue-800 hover:underline text-sm">Highlights</a>
-                        <a href="#package-citation" class="block text-blue-600 hover:text-blue-800 hover:underline text-sm">Package citation</a>
-                        <a href="#references" class="block text-blue-600 hover:text-blue-800 hover:underline text-sm">References</a>
-                    </nav>
-                </div>
+              <div class="bg-white rounded-lg shadow-md p-4 sticky top-4">
+                      <h3 class="text-lg font-semibold text-gray-800 mb-2">Table of Contents</h3>
+                      <nav class="space-y-2">
+                          <a href="#Orginal Dataset Repo" class="block text-blue-600 hover:text-blue-800 hover:underline text-sm">Meet the People</a>
+                          <a href="#installation" class="block text-blue-600 hover:text-blue-800 hover:underline text-sm">Installation</a>
+                          <a href="#Pima Diabetes-package" class="block text-blue-600 hover:text-blue-800 hover:underline text-sm">The PIMA Indian package</a>
+                          <a href="#highlights" class="block text-blue-600 hover:text-blue-800 hover:underline text-sm">Highlights</a>
+                          <a href="#package-citation" class="block text-blue-600 hover:text-blue-800 hover:underline text-sm">Package citation</a>
+                          <a href="#references" class="block text-blue-600 hover:text-blue-800 hover:underline text-sm">References</a>
+                      </nav>
+                  </div>
             </div>
         </div>
     </main>
@@ -107,3 +271,4 @@
     </script>
 </body>
 </html>
+
