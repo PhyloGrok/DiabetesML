@@ -1,20 +1,100 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>My GitHub Page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pima Diabetes Navigation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 50px;
-        }
-        h1 {
-            color: #007bff;
+            font-family: 'Inter', sans-serif;
         }
     </style>
 </head>
-<body>
-    <h1>Welcome to My GitHub Page!</h1>
-    <p>This page is hosted on GitHub Pages.</p>
-    <p>Feel free to customize it!</p>
+<body class="bg-gray-100">
+    <header class="bg-white shadow-md py-4">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <h1 class="text-xl font-semibold text-gray-800">palmerpenguins 0.1.1</h1>
+            <nav class="space-x-4">
+                <a href="#" class="text-blue-600 hover:text-blue-800 font-medium">Get started</a>
+                <a href="#" class="text-blue-600 hover:text-blue-800 font-medium">Reference</a>
+                <a href="#" class="text-blue-600 hover:text-blue-800 font-medium">Articles</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="md:col-span-2">
+                <section class="mb-8">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-4">Introduction to palmerpenguins</h2>
+                    <p class="text-gray-700">
+                        The Pima Diabetes R package contains two datasets that we believe are a viable
+                        alternative to Anderson's Iris data.
+                    </p>
+                </section>
+                <section class="mb-8">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-4">Meet the penguins</h2>
+                    <p class="text-gray-700">
+                        The  Pima Diabetes data contains.
+                    </p>
+                    <div class="flex space-x-4 mt-4">
+                        <span class="bg-purple-200 text-purple-700 px-3 py-1 rounded-full text-sm font-semibold">CHINSTRAP</span>
+                        <span class="bg-green-200 text-green-700 px-3 py-1 rounded-full text-sm font-semibold">GENTOO</span>
+                        <span class="bg-pink-200 text-pink-700 px-3 py-1 rounded-full text-sm font-semibold">ADELIE</span>
+                    </div>
+                </section>
+            </div>
+            <div class="md:col-span-1">
+                <div class="bg-white rounded-lg shadow-md p-4">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">On this page</h3>
+                    <nav class="space-y-2">
+                        <a href="#Orginal Dataset Repo" class="block text-blue-600 hover:text-blue-800 hover:underline text-sm">Meet the penguins</a>
+                        <a href="#installation" class="block text-blue-600 hover:text-blue-800 hover:underline text-sm">Installation</a>
+                        <a href="#Pima Diabetes-package" class="block text-blue-600 hover:text-blue-800 hover:underline text-sm">The palmerpenguins package</a>
+                        <a href="#highlights" class="block text-blue-600 hover:text-blue-800 hover:underline text-sm">Highlights</a>
+                        <a href="#package-citation" class="block text-blue-600 hover:text-blue-800 hover:underline text-sm">Package citation</a>
+                        <a href="#references" class="block text-blue-600 hover:text-blue-800 hover:underline text-sm">References</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-gray-200 py-4 mt-8">
+        <div class="container mx-auto px-4 text-center text-gray-600 text-sm">
+            <p>&copy; 2025 Pima Diabetes. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        const getStartedLink = document.querySelector('a[href="#"]'); // Selects the first anchor tag
+        if (getStartedLink) {
+            getStartedLink.href = "index.html"; //  relative path
+        }
+
+        const referenceLink = document.querySelector('a[href="Reference"]');
+         if (referenceLink) {
+            referenceLink.href = "https://github.com/PhyloGrok/DiabetesML/";  // external URL
+        }
+        const articlesLink = document.querySelector('a[href="Articles"]');
+        if (articlesLink){
+             articlesLink.href = "https://www.r-project.org/";
+        }
+
+    </script>
 </body>
 </html>
