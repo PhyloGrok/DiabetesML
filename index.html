@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PIMA Indian Navigation</title>
+    <title>Predicting Diabetes in Pima Indian Women</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,36 +11,270 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
+            color: #333; /* Default text color */
+            line-height: 1.7; /* Improved line height for readability */
         }
-        /* Merlot Theme Styles (approximated for HTML/CSS) */
-        .bg-merlot { background-color: #b83255; /* Merlot */ }
+        .bg-merlot { background-color: #b83255;  }
         .text-merlot { color: #b83255; }
-        .hover\:text-merlot-dark:hover { color: #942841; /* Darker Merlot */ }
-        .bg-merlot-light { background-color: #f0b4c4; /* Lighter Merlot */ }
+        .hover\:text-merlot-dark:hover { color: #942841;  }
+        .bg-merlot-light { background-color: #f0b4c4; }
         .text-merlot-light { color: #f0b4c4; }
         .border-merlot { border-color: #b83255; }
         .text-white { color: white; }
 
+        /* Research Paper Styles */
+        .container {
+            max-width: 100%; /* Make container full width */
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
+        header {
+            background-color: #f7f7f7; /* Light background for header */
+            padding: 2rem 0;
+            margin-bottom: 2rem;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+        header h1{
+            font-size: 2.25em;  /* Larger heading */
+            font-weight: bold;
+            color: #2c3e50; /* Darker heading color */
+        }
+        main {
+            display: flex;
+            flex-direction: column;
+        }
+        .main-content {
+            flex: 1;
+            padding-right: 0; /* Removed padding from main content */
+        }
+        .sidebar {
+            width: 250px; /* Increased width of sidebar */
+            margin-left: 2rem; /* Added margin to left of sidebar */
+            padding-left: 0;
+            padding-right: 1rem;
+            border-left: 1px solid #ddd; /* Add a border to the sidebar */
+            position: sticky; /* Make sidebar sticky */
+            top: 2rem;      /* Stick to top with some offset */
+            height: calc(100vh - 4rem); /* Full viewport height minus header and footer */
+            overflow-y: auto; /* Enable vertical scrolling in sidebar */
+        }
+
+        .sidebar h3 {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-bottom: 1em;
+            color: #34495e; /* Darker color for sidebar heading */
+        }
+        .sidebar nav {
+            list-style: none;
+            padding: 0;
+        }
+        .sidebar nav a {
+            display: block;
+            padding: 0.75rem 0;
+            color: #7f8c8d; /* Medium gray for sidebar links */
+            text-decoration: none;
+            border-bottom: 1px solid #eee; /* Light border for links */
+            transition: color 0.2s ease; /* Smooth transition */
+            font-size: 0.9em;
+        }
+        .sidebar nav a:hover {
+            color: #2c3e50; /* Darker color on hover */
+        }
+        .sidebar nav a.active {
+            color: #b83255; /* Highlight current section */
+            font-weight: 500;
+        }
+
+        section {
+            margin-bottom: 3rem; /* Increased section spacing */
+        }
+        section h2 {
+            font-size: 2em; /* Larger section heading */
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+            color: #2c3e50;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 0.5rem;
+        }
+        section h3{
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+        p {
+            font-size: 1.1em;
+            color: #34495e;
+        }
+        .figure {
+            margin: 2rem 0;
+            text-align: center;
+        }
+        .figure img {
+            max-width: 80%; /* Responsive images */
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 0.5rem;
+            background-color: #fff;
+        }
+        .figure figcaption {
+            margin-top: 0.5rem;
+            font-size: 0.9em;
+            color: #7f8c8d;
+            text-align: center;
+        }
+        .table-wrap {
+            overflow-x: auto;
+            margin: 2rem 0;
+        }
+        .table-wrap table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 0;
+            font-size: 0.9em;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #fff;
+        }
+        .table-wrap table thead th {
+            background-color: #ecf0f1; /* Light header background */
+            color: #2c3e50;
+            padding: 1.2rem;
+            text-align: left;
+            border-bottom: 2px solid #ddd;
+        }
+        .table-wrap table tbody td {
+            padding: 1.2rem;
+            border-bottom: 1px solid #eee;
+            text-align: left;
+            color: #34495e;
+        }
+        .table-wrap table tbody tr:hover td {
+            background-color: #f5f5f5; /* Lighter hover background */
+        }
+        .table-wrap table tfoot td {
+            padding: 1.2rem;
+            text-align: left;
+            color: #34495e;
+            border-top: 2px solid #ddd;
+        }
+
+        footer {
+            background-color: #f7f7f7;
+            padding: 2rem 0;
+            margin-top: 4rem;
+            text-align: center;
+            border-top: 1px solid #ddd;
+            color: #7f8c8d;
+            font-size: 0.9em;
+        }
+
+        /* Code formatting */
+        code {
+            background-color: #f0f0f0;
+            color: #c0392b;  /* Darker red for code */
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.9em;
+            font-family: monospace;
+        }
+        pre {
+            background-color: #f0f0f0;
+            color: #c0392b;
+            padding: 1rem;
+            border-radius: 4px;
+            overflow-x: auto;
+            margin: 1.5rem 0;
+            font-size: 0.9em;
+            font-family: monospace;
+            line-height: 1.5;
+        }
+
+        /* Dropdown Styles */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-btn {
+            background-color: #fff;
+            color: #34495e;
+            padding: 0.75rem 1.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9em;
+            transition: background-color 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            text-align: left;
+        }
+
+        .dropdown-btn:hover {
+            background-color: #f5f5f5;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #fff;
+            min-width: 200px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-top: 0.5rem;
+            overflow: auto;
+            max-height: 300px;
+        }
+
+        .dropdown-content a {
+            color: #34495e;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            display: block;
+            font-size: 0.9em;
+            transition: background-color 0.2s ease;
+            white-space: nowrap;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f5f5f5;
+        }
+
+        .dropdown.show .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-arrow {
+            width: 0;
+            height: 0;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-top: 5px solid #34495e;
+            margin-left: 0.5rem;
+        }
+
+
     </style>
 </head>
 <body class="bg-gray-100">
-    <header class="bg-merlot shadow-md py-4">
-        <div class="container mx-auto px-4 flex justify-between items-center">
-            <h1 class="text-xl font-semibold text-white">Comparing the Machine Learning Models using Pima Diabetes Dataset</h1>
-            <nav class="space-x-4">
-                <a href="#" class="text-merlot-light hover:text-white font-medium">Get started</a>
-                <a href="#" class="text-merlot-light hover:text-white font-medium">Reference</a>
-                <a href="#" class="text-merlot-light hover:text-white font-medium">Articles</a>
-            </nav>
+    <header>
+        <div class="container">
+            <h1>Predicting Diabetes in Pima Indian Women Using Machine Learning Models</h1>
         </div>
     </header>
+</main>
 
-    <main class="container mx-auto px-4 py-8">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="md:col-span-2">
-                <section class="mb-8">
-                <h2 class="text-2xl font-bold text-gray-800 mb-4", id = "introduction">Introduction to PIMA Indian datset</h2>
-                <p class="text-gray-700">
+    <main class="container">
+        <div class="main-content">
+            <section id="introduction">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Introduction</h2>
+                <p>
                     Diabetes is a serious chronic disease characterized by high levels of glucose in the blood, which can result from insufficient insulin production or the body’s inability to effectively use insulin. Its prevalence has nearly doubled since 1980, with 14% of adults aged 18 and older diagnosed with diabetes in 2022, up from 7% in 1990 <span class="citation" data-cites="who_diabetes">(<a href="#ref-who_diabetes" role="doc-biblioref">World Health Organization n.d.</a>)</span>. The disease can lead to severe complications, including blindness, kidney failure, heart attacks, strokes, and lower limb amputations. Early detection allows for timely interventions, reducing complications and healthcare costs, and improving quality of life and long-term outcomes <span class="citation" data-cites="marshall2006prevention">(<a href="#ref-marshall2006prevention" role="doc-biblioref">Marshall and Flyvbjerg 2006</a>)</span>.
                 </p>
                 <p>
@@ -108,64 +342,63 @@
             </section>
 
             <section id="results">
-                <h2 class="text-2xl font-bold text-gray-800 mb-4">Results</h2>
+                <h2>Results</h2>
                 <p>
                     This section presents the results of applying the machine learning models described in the Methods section to the Pima Indians Diabetes Dataset.
                 </p>
 
-                <h3 id = "logistic_regression_results">Logistic Regression Results</h3>
-                <p> The logistic regression model achieved an accuracy of 0.75.  The confusion matrix for the test data is shown below. </p>
+                <h3 id="logistic_regression_results">Logistic Regression Results</h3>
+
+                <p>The logistic regression model achieved an accuracy of 0.75. The confusion matrix for the test data is shown below.</p>
+
                 <figure class="figure">
-                    <img src="../results/figures/confusion_matrix_plot.png" alt="Logistic Regression Confusion Matrix">
+                    <img src="https://raw.githubusercontent.com/PhyloGrok/DiabetesML/main/plot_image/LogisticRegression_confusionmatrix.png" alt="Logistic Regression Confusion Matrix">
                     <figcaption>Logistic Regression Confusion Matrix</figcaption>
                 </figure>
 
-                <h3 id = "kmeans_clustering_results">K-Means Clustering Results</h3>
-                <p> The K-Means model  confusion matrix is shown below. </p>
+                <h3 id="kmeans_clustering_results">K-Means Clustering Results</h3>
+
+                <p>The K-Means model confusion matrix is shown below.</p>
+
                 <figure class="figure">
-                    <img src="../results/figures/kmeans_confusion_matrix.png" alt="K-Means Confusion Matrix">
+                    <img src="https://raw.githubusercontent.com/PhyloGrok/DiabetesML/main/plot_image/PCA_Kmean.png" 
+                        alt="K-Means Confusion Matrix">
                     <figcaption>K-Means Confusion Matrix</figcaption>
                 </figure>
 
-                <h3 id = "pca_kmeans_clustering_results">PCA -> K-Means Clustering Results</h3>
+                <h3 id = "pca_kmeans_confusion_matrix_results">PCA -> K-Means Clustering Results</h3>
                 <p> The PCA followed by K-Means model confusion matrix is shown below. </p>
                 <figure class="figure">
-                    <img src="../results/figures/pca_kmeans_confusion_matrix.png" alt="PCA followed by K-Means Confusion Matrix">
+                    <img src="https://raw.githubusercontent.com/PhyloGrok/DiabetesML/main/plot_image/PCA_confusion_matrix.png" alt="PCA followed by K-Means Confusion Matrix">
                     <figcaption>PCA followed by K-Means Confusion Matrix</figcaption>
                 </figure>
 
                 <h3 id = "isomap_kmeans_clustering_results">Isomap -> K-Means Clustering Results</h3>
                 <p> The Isomap followed by K-Means model confusion matrix is shown below. </p>
                  <figure class="figure">
-                    <img src="../results/figures/isomap_kmeans_confusion_matrix.png" alt="Isomap followed by K-Means Confusion Matrix">
+                    <img src="https://raw.githubusercontent.com/PhyloGrok/DiabetesML/main/plot_image/Isomap_Kmeans.png" alt="Isomap followed by K-Means Confusion Matrix">
                     <figcaption>Isomap followed by K-Means Confusion Matrix</figcaption>
                 </figure>
 
                 <h3 id = "gaussian_naive_bayes_results">Gaussian Naive Bayes Results</h3>
                 <p>  The Gaussian Naive Bayes model confusion matrix is shown below.</p>
                 <figure class="figure">
-                    <img src="https://github.com/PhyloGrok/DiabetesML/blob/main/plot_image/Gaussian_NB_confusion_matrix.png" alt="Gaussian Naive Bayes Confusion Matrix">
+                    <img src="https://raw.githubusercontent.com/PhyloGrok/DiabetesML/main/plot_image/Gaussian_NB_confusion_matrix.png" alt="Gaussian Naive Bayes Confusion Matrix">
                     <figcaption>Gaussian Naive Bayes Confusion Matrix</figcaption>
                 </figure>
 
-                <h3 id = "shallow_perceptron_results">Shallow Perceptron Results</h3>
-                <p>  The Shallow Perceptron model confusion matrix is shown below. </p>
+                <h3 id = "classification_models_results">ROC Curves Results</h3>
+                <p>  The ROC curves of all classification models is shown below. </p>
                 <figure class="figure">
-                    <img src="../results/figures/shallow_nn_confusion_matrix.png" alt="Shallow Perceptron Confusion Matrix">
+                    <img src="https://raw.githubusercontent.com/PhyloGrok/DiabetesML/main/plot_image/ROC_Curves.png" alt="ROC Curves for Diabetes Classification">
                     <figcaption>Shallow Perceptron Confusion Matrix</figcaption>
                 </figure>
 
-                <h3 id = "deep_perceptron_results">Deep Perceptron Results</h3>
-                <p>  The Deep Perceptron model confusion matrix is shown below. </p>
-                <figure class="figure">
-                    <img src="../results/figures/deep_nn_confusion_matrix.png" alt="Deep Perceptron Confusion Matrix">
-                    <figcaption>Deep Perceptron Confusion Matrix</figcaption>
-                </figure>
 
             </section>
 
             <section id="discussion">
-                <h2 class="text-2xl font-bold text-gray-800 mb-4">Discussion</h2>
+                <h2>Discussion</h2>
                 <p>
                     In this study, we compared the performance of several machine learning models in predicting diabetes in Pima Indian women.
                 </p>
@@ -190,15 +423,22 @@
                 </p>
             </section>
 
+            <section id="conclusion">
+                <h2>Conclusion</h2>
+                <p>
+                   This study compared several machine learning models. The models were able to predict diabetes.
+                </p>
+            </section>
+
             <section id="acknowledgements">
-                <h2 class="text-2xl font-bold text-gray-800 mb-4">Acknowledgements</h2>
+                <h2>Acknowledgements</h2>
                     <p>
                         We would like to acknowledge the Merck data science fellowship, UMBC CNMS, and BTEC423 course for their support and resources.
                     </p>
             </section>
 
-            <section id="Citations" class="unnumbered">
-                <h2 class="text-2xl font-bold text-gray-800 mb-4">Citations</h2>
+            <section id="references" class="unnumbered">
+                <h2>References</h2>
                  <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
                 <div id="ref-agarwal2022machine" class="csl-entry" role="listitem">
                 <div class="csl-left-margin">Agarwal, Shivam, and Mitesh Vadiwala. 2022. &#8220;Machine Learning in Diabetes Research.&#8221; In <i>Machine Learning and Deep Learning in Medical Imaging</i>, 149&#8211;68. Chapman and Hall/CRC.
@@ -210,56 +450,3 @@
                 </div>
                 <div id="ref-bini2018artificial" class="csl-entry" role="listitem">
                 <div class="csl-left-margin">Bini, Car
-                    </div>
-                </section>
-            </div>
-            <div class="md:col-span-1">
-              <div class="bg-white rounded-lg shadow-md p-4 sticky top-4">
-                      <h3 class="text-lg font-semibold text-gray-800 mb-2">Table of Contents</h3>
-                      <nav class="space-y-2">
-                          <a href="#introduction" class="block text-blue-600 hover:text-blue-800 hover:underline text-sm">Introduction</a>
-                          <a href="#methods" class="block text-blue-600 hover:text-blue-800 hover:underline text-sm">Methods</a>
-                          <a href="#results" class="block text-blue-600 hover:text-blue-800 hover:underline text-sm">Results</a>
-                          <a href="#discussion" class="block text-blue-600 hover:text-blue-800 hover:underline text-sm">Discussion</a>
-                          <a href="#acknowledgements" class="block text-blue-600 hover:text-blue-800 hover:underline text-sm">Acknowledgements</a>
-                          <a href="#Citations" class="block text-blue-600 hover:text-blue-800 hover:underline text-sm">Citation</a>
-                      </nav>
-                  </div>
-            </div>
-        </div>
-    </main>
-
-    <footer class="bg-gray-200 py-4 mt-8">
-        <div class="container mx-auto px-4 text-center text-gray-600 text-sm">
-            <p>&copy; 2025 PIMA Indian. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <script>
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        const getStartedLink = document.querySelector('a[href="#"]'); // Selects the first anchor tag
-        if (getStartedLink) {
-            getStartedLink.href = "index.html"; //  relative path
-        }
-
-        const referenceLink = document.querySelector('a[href="Reference"]');
-         if (referenceLink) {
-            referenceLink.href = "https://github.com/PhyloGrok/DiabetesML/";  // external URL
-        }
-        const articlesLink = document.querySelector('a[href="Articles"]');
-        if (articlesLink){
-             articlesLink.href = "https://www.r-project.org/";
-        }
-
-    </script>
-</body>
-</html>
