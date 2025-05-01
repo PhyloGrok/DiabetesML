@@ -341,6 +341,7 @@
                 </p>
             </section>
 
+            <!-- Result -->
             <section id="results">
                 <h2>Results</h2>
                 <p>
@@ -358,7 +359,7 @@
 
                 <h3 id="kmeans_clustering_results">K-Means Clustering Results</h3>
 
-                <p>The K-Means model confusion matrix is shown below.</p>
+                <p>The The PCA followed by K-Means model is shown below.</p>
 
                 <figure class="figure">
                     <img src="https://raw.githubusercontent.com/PhyloGrok/DiabetesML/main/plot_image/PCA_Kmean.png" 
@@ -393,6 +394,66 @@
                     <img src="https://raw.githubusercontent.com/PhyloGrok/DiabetesML/main/plot_image/ROC_Curves.png" alt="ROC Curves for Diabetes Classification">
                     <figcaption>Shallow Perceptron Confusion Matrix</figcaption>
                 </figure>
+
+                <!-- Accuracy Score Table -->
+                <!DOCTYPE html>
+                <html lang="en">
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>Comparison of Algorithms</title>
+                    <style>
+                        table {
+                            width: 100%;
+                            border-collapse: collapse;
+                        }
+
+                        th, td {
+                            border: 1px solid black; /* Full borders like Excel */
+                            padding: 10px;
+                            text-align: left;
+                        }
+
+                        th {
+                            background-color: #f2f2f2; /* Light background for headers */
+                        }
+
+                        tr:nth-child(even) {
+                            background-color: #f9f9f9; /* Alternating row colors */
+                        }
+                    </style>
+                </head>
+                <body>
+
+                    <h3 id="classification_models_results">Comparison of Algorithms</h3>
+
+                    <table>
+                        <tr>
+                            <th>Algorithm</th>
+                            <th>Accuracy</th>
+                            <th>Time Taken (ms)</th>
+                        </tr>
+                        <tr>
+                            <td>Logistic Regression</td>
+                            <td>75%</td>
+                            <td>120</td>
+                        </tr>
+                        <tr>
+                            <td>Decision Tree</td>
+                            <td>80%</td>
+                            <td>200</td>
+                        </tr>
+                        <tr>
+                            <td>Random Forest</td>
+                            <td>85%</td>
+                            <td>250</td>
+                        </tr>
+                    </table>
+
+                </body>
+                </html>
+                
+
 
 
             </section>
