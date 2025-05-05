@@ -1,3 +1,4 @@
+%%html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -272,12 +273,6 @@
             border-top: 5px solid #34495e;
             margin-left: 0.5rem;
         }
-        img {
-            width: 600px;
-            height: 400px;
-            object-fit: cover;
-        }
-
 
 
     </style>
@@ -300,7 +295,7 @@
                 <section class="mb-8">
                 <h2 class="text-2xl font-bold text-gray-800 mb-4", id = "introduction">Introduction to PIMA Indian datset</h2>
                 <p class="text-gray-700">
-                    Diabetes is a serious chronic disease characterized by high levels of glucose in the blood, which can result from insufficient insulin production or the body’s inability to effectively use insulin. Its prevalence has nearly doubled since 1980, with 14% of adults aged 18 and older diagnosed with diabetes in 2022, up from 7% in 1990 <span class="citation" data-cites="who_diabetes">(<a href="#ref-who_diabetes" role="doc-biblioref">World Health Organization n.d.</a>)</span>. The disease <span class="citation" data-cites="marshall2006prevention">(<a href="#ref-marshall2006prevention" role="doc-biblioref">Marshall and Flyvbjerg 2006</a>)</span>.
+                    Diabetes is a serious chronic disease characterized by high levels of glucose in the blood, which can result from insufficient insulin production or the body’s inability to effectively use insulin. Its prevalence has nearly doubled since 1980, with 14% of adults aged 18 and older diagnosed with diabetes in 2022, up from 7% in 1990 <span class="citation" data-cites="who_diabetes">(<a href="#ref-who_diabetes" role="doc-biblioref">World Health Organization n.d.</a>)</span>. The disease can lead to severe complications, including blindness, kidney failure, heart attacks, strokes, and lower limb amputations. Early detection allows for timely interventions, reducing complications and healthcare costs, and improving quality of life and long-term outcomes <span class="citation" data-cites="marshall2006prevention">(<a href="#ref-marshall2006prevention" role="doc-biblioref">Marshall and Flyvbjerg 2006</a>)</span>.
                 </p>
                 <p>
                     Artificial intelligence (AI) leverages computer systems and big data to simulate intelligent behavior with minimal human intervention, and within it, machine learning (ML) is a subset of AI methodologies. Since the rise of AI, Machine learning has increasingly been applied in various areas of disease detection and prevention in the healthcare field <span class="citation" data-cites="bini2018artificial">(<a href="#ref-bini2018artificial" role="doc-biblioref">Bini 2018</a>)</span>. Numerous machine learning techniques have been deployed to develop more efficient and effective methods for diagnosing chronic diseases <span class="citation" data-cites="battineni2020applications">(<a href="#ref-battineni2020applications" role="doc-biblioref">Battineni et al. 2020</a>)</span>. Utilizing machine learning methods in diabetes research has been proven to be a critical strategy or harnessing large volumes of diabetes-related data to extract valuable insights <span class="citation" data-cites="agarwal2022machine">(<a href="#ref-agarwal2022machine" role="doc-biblioref">Agarwal and Vadiwala 2022</a>)</span>.
@@ -373,52 +368,80 @@
                     This section presents the results of applying the machine learning models described in the Methods section to the Pima Indians Diabetes Dataset.
                 </p>
 
+                <!-- Logistic Regression Results -->
                 <h3 id="logistic_regression_results">Logistic Regression Results</h3>
-
                 <p>The logistic regression model achieved an accuracy of 0.75. The confusion matrix for the test data is shown below.</p>
 
-                <figure class="figure">
-                    <img src="https://raw.githubusercontent.com/PhyloGrok/DiabetesML/main/plot_image/LogisticRegression_confusionmatrix.png" alt="Logistic Regression Confusion Matrix">
-                    <figcaption>Logistic Regression Confusion Matrix</figcaption>
-                </figure>
+                <div class="image-container">
+                    <figure class="figure">
+                        <img src="https://raw.githubusercontent.com/PhyloGrok/DiabetesML/main/plot_image/LogisticRegression_confusionmatrix.png" class="custom-img-1" alt="Logistic Regression Confusion Matrix">
+                        <figcaption>Logistic Regression Confusion Matrix</figcaption>
+                    </figure>
 
+                    <figure class="figure">
+                        <img src="https://raw.githubusercontent.com/PhyloGrok/DiabetesML/main/plot_image/LogisticRegression_ROC.png" class="custom-img-2" alt="Logistic Regression ROC Curve">
+                        <figcaption>Logistic Regression ROC Curve</figcaption>
+                    </figure>
+                </div>
+                <!-- K-Means Clustering Results -->
                 <h3 id="kmeans_clustering_results">K-Means Clustering Results</h3>
-
-                <p>The The PCA followed by K-Means model is shown below.</p>
-
+                <p>The PCA followed by K-Means model is shown below.</p>
                 <figure class="figure">
-                    <img src="https://raw.githubusercontent.com/PhyloGrok/DiabetesML/main/plot_image/PCA_Kmean.png"
-                        alt="K-Means Confusion Matrix">
+                    <img src="https://raw.githubusercontent.com/PhyloGrok/DiabetesML/main/plot_image/PCA_Kmean.png" alt="K-Means Confusion Matrix">
                     <figcaption>K-Means Confusion Matrix</figcaption>
                 </figure>
 
-                <h3 id = "pca_kmeans_confusion_matrix_results">PCA -> K-Means Clustering Results</h3>
-                <p> The PCA followed by K-Means model confusion matrix is shown below. </p>
+                <h3 id="pca_kmeans_confusion_matrix_results">PCA -> K-Means Clustering Results</h3>
+                <p>The PCA followed by K-Means model confusion matrix is shown below.</p>
                 <figure class="figure">
                     <img src="https://raw.githubusercontent.com/PhyloGrok/DiabetesML/main/plot_image/PCA_confusion_matrix.png" alt="PCA followed by K-Means Confusion Matrix">
                     <figcaption>PCA followed by K-Means Confusion Matrix</figcaption>
                 </figure>
 
-                <h3 id = "isomap_kmeans_clustering_results">Isomap -> K-Means Clustering Results</h3>
-                <p> The Isomap followed by K-Means model confusion matrix is shown below. </p>
-                 <figure class="figure">
+                <!-- Isomap Clustering -->
+                <h3 id="isomap_kmeans_clustering_results">Isomap -> K-Means Clustering Results</h3>
+                <p>The Isomap followed by K-Means model confusion matrix is shown below.</p>
+                <figure class="figure">
                     <img src="https://raw.githubusercontent.com/PhyloGrok/DiabetesML/main/plot_image/Isomap_Kmeans.png" alt="Isomap followed by K-Means Confusion Matrix">
                     <figcaption>Isomap followed by K-Means Confusion Matrix</figcaption>
                 </figure>
 
-                <h3 id = "gaussian_naive_bayes_results">Gaussian Naive Bayes Results</h3>
-                <p>  The Gaussian Naive Bayes model confusion matrix is shown below.</p>
+                <!-- Gaussian Naive Bayes -->
+                <h3 id="gaussian_naive_bayes_results">Gaussian Naive Bayes Results</h3>
+                <p>The Gaussian Naive Bayes model confusion matrix is shown below.</p>
                 <figure class="figure">
                     <img src="https://raw.githubusercontent.com/PhyloGrok/DiabetesML/main/plot_image/Gaussian_NB_confusion_matrix.png" alt="Gaussian Naive Bayes Confusion Matrix">
                     <figcaption>Gaussian Naive Bayes Confusion Matrix</figcaption>
                 </figure>
 
-                <h3 id = "classification_models_results">ROC Curves Results</h3>
-                <p>  The ROC curves of all classification models is shown below. </p>
+                <!-- ROC Curves -->
+                <h3 id="classification_models_results">ROC Curves Results</h3>
+                <p>The ROC curves of all classification models are shown below.</p>
                 <figure class="figure">
                     <img src="https://raw.githubusercontent.com/PhyloGrok/DiabetesML/main/plot_image/ROC_Curves.png" alt="ROC Curves for Diabetes Classification">
-                    <figcaption>Shallow Perceptron Confusion Matrix</figcaption>
+                    <figcaption>ROC Curves for Diabetes Classification</figcaption>
                 </figure>
+            </section>
+
+            <!-- CSS -->
+            <style>
+                .image-container {
+                    display: flex;
+                    gap: 5px;
+                    align-items: stretch;
+                    justify-content: flex-start;
+                    width: auto; /* Adjust based on content */
+                    max-width: 1200px; /* Restrict width */
+                }
+
+                .figure {
+                    width: 800px; /* Fixed size */
+                    height: 600px;
+                    overflow: cover;
+                }
+
+            </style>
+
 
                 <!-- Accuracy Score Table -->
                 <!DOCTYPE html>
@@ -577,3 +600,4 @@
     </script>
 </body>
 </html>
+
