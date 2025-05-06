@@ -363,33 +363,37 @@
 
                 <div class="image-container">
                     <figure class="figure">
-                        <img src="https://raw.githubusercontent.com/PhyloGrok/DiabetesML/main/plot_image/LogisticRegression_confusionmatrix.png" class="custom-img-1" alt="Logistic Regression Confusion Matrix">
+                        <img src="https://raw.githubusercontent.com/PhyloGrok/DiabetesML/main/plot_image/LogisticRegression_confusionmatrix.png" alt="Logistic Regression Confusion Matrix">
                         <figcaption>Logistic Regression Confusion Matrix</figcaption>
                     </figure>
 
                     <figure class="figure">
-                        <img src="https://raw.githubusercontent.com/PhyloGrok/DiabetesML/main/plot_image/LogisticRegression_ROC.png" class="custom-img-2" alt="Logistic Regression ROC Curve">
+                        <img src="https://raw.githubusercontent.com/PhyloGrok/DiabetesML/main/plot_image/LogisticRegression_ROC.png" alt="Logistic Regression ROC Curve">
                         <figcaption>Logistic Regression ROC Curve</figcaption>
                     </figure>
                 </div>
+
                 <!-- K-Means Clustering Results -->
                 <h3 id="kmeans_clustering_results">K-Means Clustering Results</h3>
                 <p>The PCA followed by K-Means model is shown below.</p>
+
                 <figure class="figure">
                     <img src="https://raw.githubusercontent.com/PhyloGrok/DiabetesML/main/plot_image/PCA_Kmean.png" alt="K-Means Confusion Matrix">
                     <figcaption>K-Means Confusion Matrix</figcaption>
                 </figure>
 
-                <h3 id="pca_kmeans_confusion_matrix_results">PCA -> K-Means Clustering Results</h3>
+                <h3 id="pca_kmeans_confusion_matrix_results">PCA → K-Means Clustering Results</h3>
                 <p>The PCA followed by K-Means model confusion matrix is shown below.</p>
+
                 <figure class="figure">
                     <img src="https://raw.githubusercontent.com/PhyloGrok/DiabetesML/main/plot_image/PCA_confusion_matrix.png" alt="PCA followed by K-Means Confusion Matrix">
                     <figcaption>PCA followed by K-Means Confusion Matrix</figcaption>
                 </figure>
 
                 <!-- Isomap Clustering -->
-                <h3 id="isomap_kmeans_clustering_results">Isomap -> K-Means Clustering Results</h3>
+                <h3 id="isomap_kmeans_clustering_results">Isomap → K-Means Clustering Results</h3>
                 <p>The Isomap followed by K-Means model confusion matrix is shown below.</p>
+
                 <figure class="figure">
                     <img src="https://raw.githubusercontent.com/PhyloGrok/DiabetesML/main/plot_image/Isomap_Kmeans.png" alt="Isomap followed by K-Means Confusion Matrix">
                     <figcaption>Isomap followed by K-Means Confusion Matrix</figcaption>
@@ -398,6 +402,7 @@
                 <!-- Gaussian Naive Bayes -->
                 <h3 id="gaussian_naive_bayes_results">Gaussian Naive Bayes Results</h3>
                 <p>The Gaussian Naive Bayes model confusion matrix is shown below.</p>
+
                 <figure class="figure">
                     <img src="https://raw.githubusercontent.com/PhyloGrok/DiabetesML/main/plot_image/Gaussian_NB_confusion_matrix.png" alt="Gaussian Naive Bayes Confusion Matrix">
                     <figcaption>Gaussian Naive Bayes Confusion Matrix</figcaption>
@@ -406,32 +411,39 @@
                 <!-- ROC Curves -->
                 <h3 id="classification_models_results">ROC Curves Results</h3>
                 <p>The ROC curves of all classification models are shown below.</p>
+
                 <figure class="figure">
                     <img src="https://raw.githubusercontent.com/PhyloGrok/DiabetesML/main/plot_image/ROC_Curves.png" alt="ROC Curves for Diabetes Classification">
                     <figcaption>ROC Curves for Diabetes Classification</figcaption>
                 </figure>
+
+                <style>
+                    .image-container {
+                        display: flex;
+                        flex-wrap: wrap;
+                        gap: 2px;
+                        width: 100%;
+                    }
+
+                    .figure {
+                        max-width: 600px;
+                        height: 400px;
+                        display: inline-block; /* Keeps image position unchanged */
+                        margin: 0;
+                        padding: 0;
+                        text-align: center; /* Ensures caption is centered relative to the image */
+                    }
+
+                    figcaption {
+                        display: block;
+                        font-size: 16px; /* Adjust size if needed */
+                        margin-top: 5px;
+                        width: 100%;
+                    }
+                </style>
             </section>
 
             <!-- CSS -->
-            <style>
-                .image-container {
-                    display: flex;
-                    gap: 5px;
-                    align-items: stretch;
-                    justify-content: flex-start;
-                    width: auto; /* Adjust based on content */
-                    max-width: 1200px; /* Restrict width */
-                }
-
-                .figure {
-                    width: 800px; /* Fixed size */
-                    height: 600px;
-                    overflow: cover;
-                }
-
-            </style>
-
-
                 <!-- Accuracy Score Table -->
                 <!DOCTYPE html>
                 <html lang="en">
@@ -467,7 +479,7 @@
                     <table>
                         <tr>
                             <th>Algorithm</th>
-                            <th>Accuracy</th>
+                            <th>Accuracy Rate</th>
                         </tr>
                         <tr>
                             <td>Logistic Regression</td>
