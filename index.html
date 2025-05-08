@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -277,9 +278,18 @@
     </style>
 </head>
 <body class="bg-gray-100">
+  <!-- For Python Snippits -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+  <!-- and it's easy to individually load additional languages -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script>
+
+  <script>hljs.highlightAll();</script>
+    <!-- For Python Snippits -->
     <header class="bg-merlot shadow-md py-4">
         <div class="container mx-auto px-4 flex justify-between items-center">
-            <h1 class="text-xl font-semibold text-white">Comparing the Machine Learning Models using Pima Diabetes Dataset</h1>
+            <h1 class="text-xl font-semibold text-white">Pima Indian Diabetes Machine Learning</h1>
             <nav class="space-x-4">
                 <a href="#" class="text-merlot-light hover:text-white font-medium">Get started</a>
                 <a href="#" class="text-merlot-light hover:text-white font-medium">Reference</a>
@@ -291,11 +301,14 @@
     <main class="container mx-auto px-4 py-8">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div class="md:col-span-2">
+               <h1 class="text-2xl font-bold text-black-1000 mb-4">Comparing the Machine Learning Models using Pima Indian Diabetes Dataset</h1>
+                <p><strong>Authors:</strong> Aimee Icaza, Ketsia Perreklus, Li lan Fang</p>
+                <p><strong>Publication Date:</strong> May TBD, 2025</p>
                 <section class="mb-8">
                 <h2 class="text-2xl font-bold text-gray-800 mb-4", id = "introduction">Introduction to the PIMA Indian Datset</h2>
                 <p>Diabetes is a chronic medical condition that affects how the body processes sugar. It occurs when the body either does not produce enough insulin, a hormone responsible for regulating blood sugar, or cannot effectively use the insulin it produces. The two main types of diabetes are Type 1, often diagnosed in children and young adults, and Type 2, which is more common and typically develops in adults. Type 2 diabetes is closely linked with lifestyle factors such as diet, exercise, and body weight. If left unmanaged, diabetes can lead to severe health complications, including heart disease, kidney failure, and vision loss. <br>
                 </p>
-                <p>To better understand and analyze the onset of diabetes, researchers have utilized data-driven methods. Our Machine Learning class used a well-known dataset, the Pima Indians Diabetes dataset. The National Institute of Diabetes and Digestive and Kidney Diseases conducted research in Arizona and collected medical information from female patients of Pima Indian heritage aged 21 and older [2]. The dataset is commonly utilized in machine learning and statistical analysis to create models and visualizations that illustrate patterns within the diabetes data. The dataset comprises several vital metrics, including: 
+                <p>To better understand and analyze the onset of diabetes, researchers have utilized data-driven methods. Our Machine Learning class used a well-known dataset, the Pima Indians Diabetes dataset. The National Institute of Diabetes and Digestive and Kidney Diseases conducted research in Arizona and collected medical information from female patients of Pima Indian heritage aged 21 and older [2]. The dataset is commonly utilized in machine learning and statistical analysis to create models and visualizations that illustrate patterns within the diabetes data. The dataset comprises several vital metrics, including:
                   <ul>
                     <li><strong>Pregnancies</strong> – Number of times the patient has been pregnant.</li>
                     <li><strong>Glucose</strong> – Plasma glucose concentration measured two hours after an oral glucose tolerance test.</li>
@@ -306,18 +319,21 @@
                     <li><strong>Diabetes Pedigree(DP) Function</strong> – A function that scores the likelihood of diabetes based on family history.</li>
                     <li><strong>Age</strong> – Age of the patient (years).</li>
                     <li><strong> Diabetes(Outcome)</strong> – A binary value: 0 indicates the patient is not diabetic, and 1 indicates the patient is diabetic.</li>
-                  </ul>       
+                  </ul>
                 </p>
-                   
+
                 <p>This dataset comprises approximately 768 entries, each corresponding to a single individual. The columns represent various medical indicators that may impact the likelihood of diabetes. In our Machine Learning class, we used the Pima dataset to explore several algorithms, including logistic regression, confusion matrix evaluation, K-means clustering, and Gaussian Mixture Models. Each model provided a visual representation of the dataset, helping better understand patterns, comparisons, classifications, and clustering within the data.
                 </p>
             </section>
+
+<!-- Methods START HERE -->
 
             <section id="methods">
                 <h2 class="text-2xl font-bold text-gray-800 mb-4">Methods</h2>
                 <p>
                     In this study, we employed a variety of machine learning models to predict the onset of diabetes in Pima Indian women. The analysis was performed using Python <span class="citation" data-cites="Python">(<a href="#ref-Python" role="doc-biblioref">Van Rossum and Drake 2009</a>)</span>, leveraging libraries such as NumPy <span class="citation" data-cites="harris2020array">(<a href="#ref-harris2020array" role="doc-biblioref">Harris et al. 2020</a>)</span>, Pandas <span class="citation" data-cites="pandas">(<a href="#ref-pandas" role="doc-biblioref">McKinney 2010</a>)</span>, and Scikit-learn <span class="citation" data-cites="pedregosa2011scikit">(<a href="#ref-pedregosa2011scikit" role="doc-biblioref">Pedregosa et al. 2011</a>)</span>.  The following section describes the machine learning methodologies utilized.
                 </p>
+                <script src="https://gist.github.com/PhyloGrok/DiabetesML/blob/main/Code/libraries.py"></script>
 
                 <h3>Logistic Regression</h3>
                 <p>
@@ -348,9 +364,60 @@
                 <p>
                     We also employed neural networks, specifically shallow and deep perceptrons, to model the relationship between input features and diabetes.  Shallow perceptrons refer to neural networks with a single hidden layer, while deep perceptrons have multiple hidden layers.  Neural networks are capable of learning complex non-linear relationships in the data. We hypothesized that deep perceptrons might capture more intricate patterns in the data compared to simpler models.
                 </p>
+                <pre><code class="language-python">
+                    # Data manipulation libraries
+                    import pandas as pd
+                    import numpy as np
+
+                    # Visualization libraries
+                    import matplotlib.pyplot as plt
+                    import seaborn as sns
+                    import plotly.express as px
+
+                    # Machine learning libraries
+                    from sklearn.preprocessing import StandardScaler
+                    from sklearn.model_selection import train_test_split
+                    from sklearn.decomposition import PCA
+                    from sklearn.manifold import Isomap
+                    from sklearn.cluster import KMeans
+                    from sklearn.mixture import GaussianMixture
+                    from sklearn.linear_model import LogisticRegression, Perceptron
+                    from sklearn.neural_network import MLPClassifier
+                    from sklearn.naive_bayes import GaussianNB
+                    from sklearn import metrics
+                    from sklearn.datasets import load_diabetes, make_blobs
+                    from sklearn.metrics import (
+                        accuracy_score,
+                        confusion_matrix,
+                        ConfusionMatrixDisplay,
+                        roc_curve,
+                        auc
+                    )
+
+                    # Deep learning libraries
+                    import tensorflow as tf
+                    from tensorflow.keras.models import Sequential
+                    from tensorflow.keras.layers import Dense
+
+                    # Colab utilities
+                    from google.colab import files
+
+
+                    # Set seaborn style
+                    sns.set_style('whitegrid')
+
+
+
+                    # Load the data from the CSV file
+                    df = pd.read_csv('Diabetes_Pima.csv')
+                    #Diabetes. Patient ID exclueded
+                    df = df.drop(['Patient ID'], axis=1)
+                    df.head()
+                    df.dropna(axis=0, how='any', inplace=True)
+                </code></pre>
             </section>
 
-             <!-- Result -->
+            <!-- Result -->
             <section id="results">
                 <h2>Results</h2>
                 <p>
@@ -517,7 +584,7 @@
                 </style>
             </section>
             <!-- Result End -->
-                
+
             <section id="discussion">
                 <h2 class="text-2xl font-bold text-gray-800 mb-4">Discussion</h2>
                 <p>
@@ -617,4 +684,3 @@
     </script>
 </body>
 </html>
-
