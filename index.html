@@ -672,6 +672,7 @@
                         gap: 10px;
                         width: 100%;
                         justify-content: center;
+                        align-items: stretch;
                     }
                     .image-container-4 .figure {
                         flex: 1 1 calc(50% - 10px); /* Adjust to keep images side by side */
@@ -680,7 +681,8 @@
                     }
                     .image-container-4 img {
                         max-width: 100%;
-                        height: auto;
+                        height: 100%;
+                        object-fit: cover;
                         display: block;
                     }
                     .figure {
