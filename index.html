@@ -545,7 +545,6 @@
                         <img src="https://raw.githubusercontent.com/PhyloGrok/DiabetesML/main/plot_image/LogisticRegression_confusionmatrix.png" alt="Logistic Regression Confusion Matrix">
                         <figcaption>Logistic Regression Confusion Matrix</figcaption>
                     </figure>
-
                     <figure class="figure">
                         <img src="https://raw.githubusercontent.com/PhyloGrok/DiabetesML/main/plot_image/LogisticRegression_ROC.png" alt="Logistic Regression ROC Curve">
                         <figcaption>Logistic Regression ROC Curve</figcaption>
@@ -553,13 +552,20 @@
                 </div>
 
                 <!-- K-Means Clustering Results -->
-                <h3 id="kmeans_clustering_results">K-Means Clustering Results</h3>
-                <p>The PCA followed by K-Means model is shown below.</p>
+                <h3 id="kmeans_clustering_results">Comparision of K-Means Clustering Results</h3>
+                <p style="font-weight: bold; font-size: 16px;">Cumulative Plots (PCA and Isomap)</p>
+                <p>The results are presented through two cumulative variance plots: one for PCA and one for Isomap, applied to the PIMA Indians Diabetes dataset. The PCA plot illustrates the explained variance ratios, showing the cumulative proportion of variance captured by the principal components as the dataset is reduced in dimensionality. In contrast, the Isomap plot approximates cumulative variance using reconstruction error, since Isomap does not directly provide explained variance ratios. These plots help compare the effectiveness of each dimensionality reduction technique in capturing the underlying structure of the dataset. While PCA provides a clear and quantifiable measure of variance, Isomap offers an alternative perspective by evaluating how well the data can be reconstructed after dimensionality reduction, highlighting differences in how each method preserves the intrinsic characteristics of the diabetes data.</p>
+                <div class="image-container-2">
+                    <figure class="figure">
+                        <img src="https://raw.githubusercontent.com/PhyloGrok/DiabetesML/main/plot_image/PCA_CumulativeExplaindVariance (2).png" alt="PCA cumulative">
+                        <figcaption>Cumulative Variance Plot after PCA</figcaption>
+                    </figure>
+                    <figure class="figure">
+                        <img src="https://raw.githubusercontent.com/PhyloGrok/DiabetesML/main/plot_image/Isomap_CumulativeReconstructionError.png" alt="Isomap cumulative">
+                        <figcaption>Cumulative Reconstruction Error after Isomap</figcaption>
+                    </figure>
+                </div>
 
-                <figure class="figure">
-                    <img src="https://raw.githubusercontent.com/PhyloGrok/DiabetesML/main/plot_image/PCA_Kmean.png" alt="K-Means Confusion Matrix">
-                    <figcaption>K-Means Confusion Matrix</figcaption>
-                </figure>
 
                 <h3 id="pca_kmeans_confusion_matrix_results">PCA → K-Means Clustering Results</h3>
                 <p>The PCA followed by K-Means model confusion matrix is shown below.</p>
@@ -578,6 +584,11 @@
                     <figcaption>Isomap followed by K-Means Confusion Matrix</figcaption>
                 </figure>
 
+                <figure class="figure">
+                    <img src="https://raw.githubusercontent.com/PhyloGrok/DiabetesML/main/plot_image/PCA_Kmean.png" alt="K-Means Confusion Matrix">
+                    <figcaption>K-Means Confusion Matrix</figcaption>
+                </figure>
+
                 <!-- Gaussian Naive Bayes -->
                 <h3 id="gaussian_naive_bayes_results">Gaussian Naive Bayes Results</h3>
                 <p>The Gaussian Naive Bayes model confusion matrix is shown below.</p>
@@ -587,14 +598,7 @@
                     <figcaption>Gaussian Naive Bayes Confusion Matrix</figcaption>
                 </figure>
 
-                <!-- ROC Curves -->
-                <h3 id="classification_models_results">ROC Curves Results</h3>
-                <p>The ROC curves of all classification models are shown below.</p>
-
-                <figure class="figure">
-                    <img src="https://raw.githubusercontent.com/PhyloGrok/DiabetesML/main/plot_image/ROC_Curves.png" alt="ROC Curves for Diabetes Classification">
-                    <figcaption>ROC Curves for Diabetes Classification</figcaption>
-                </figure>
+                
 
                 <style>
                     .image-container-1 {
@@ -612,6 +616,23 @@
                     }
 
                     .image-container-1 img {
+                        max-width: 100%;
+                        height: auto;
+                        display: block;
+                    }
+                    .image-container-2 {
+                        display: flex;
+                        flex-wrap: wrap;
+                        gap: 10px;
+                        width: 100%;
+                        justify-content: center;
+                    }
+                    .image-container-2 .figure {
+                        flex: 1 1 calc(50% - 10px); /* Adjust to keep images side by side */
+                        max-width: calc(50% - 10px);
+                        text-align: center;
+                    }
+                    .image-container-2 img {
                         max-width: 100%;
                         height: auto;
                         display: block;
