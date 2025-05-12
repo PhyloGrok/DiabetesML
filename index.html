@@ -430,57 +430,105 @@
                     <meta charset="UTF-8">
                     <meta name="viewport" content="width=device-width, initial-scale=1.0">
                     <title>Comparison of Algorithms</title>
-                    <style>
+                      <style>
+                        /* Container for side-by-side layout */
+                        .container {
+                            display: flex;
+                            justify-content: space-between;
+                            gap: 20px;
+                            margin: 20px;
+                        }
+
+                        /* Style for the table */
                         table {
-                            width: 100%;
+                            width: 50%;
                             border-collapse: collapse;
+                            border: 1px solid #ddd;
                         }
 
                         th, td {
-                            border: 1px solid black; /* Full borders like Excel */
+                            border: 1px solid black;
                             padding: 10px;
                             text-align: left;
                         }
 
                         th {
-                            background-color: #f2f2f2; /* Light background for headers */
+                            background-color: #f2f2f2;
                         }
 
                         tr:nth-child(even) {
-                            background-color: #f9f9f9; /* Alternating row colors */
+                            background-color: #f9f9f9;
+                        }
+
+                        /* Style for the image container */
+                        .image-container {
+                            width: 50%;
+                            display: flex;
+                            flex-direction: column; /* Ensures proper placement of caption below image */
+                            justify-content: center;
+                            align-items: center;
+                            border: 1px solid #ddd;
+                            padding: 10px;
+                        }
+
+                        .image-container img {
+                            max-width: 100%;
+                            height: auto;
+                            object-fit: contain;
+                        }
+
+                        /* Responsive design for smaller screens */
+                        @media (max-width: 768px) {
+                            .container {
+                                flex-direction: column;
+                                align-items: center;
+                            }
+
+                            table, .image-container {
+                                width: 100%;
+                            }
                         }
                     </style>
                 </head>
                 <body>
+                    <h3 id="classification_models_results"> Overall Summary: Comparison of Algorithms</h3>
+                    <p>
+                        The table presents the accuracy scores of various machine learning algorithms, evaluated on the PIMA Indians Diabetes dataset. These scores reflect the performance of each model in predicting diabetes, highlighting their predictive effectiveness. Accompanying this is a figure showing the ROC curves for each algorithm, with the corresponding AUC (Area Under the Curve) scores, providing a visual representation of the models' classification performance and discriminative ability.
+                    </p>
+                    <div class="container">
+                        <!-- Accuracy Score Table -->
+                        <table>
+                            <tr>
+                                <th>Algorithm</th>
+                                <th>Accuracy Rate</th>
+                            </tr>
+                            <tr>
+                                <td>Logistic Regression</td>
+                                <td>76%</td>
+                            </tr>
+                            <tr>
+                                <td>PCA after K-Means Clustering</td>
+                                <td>74%</td>
+                            </tr>
+                            <tr>
+                                <td>Isomap after K-Means Clustering</td>
+                                <td>72%</td>
+                            </tr>
+                            <tr>
+                                <td>Gaussian Naive Bayes</td>
+                                <td>75%</td>
+                            </tr>
+                            <tr>
+                                <td>???</td>
+                                <td>85%</td>
+                            </tr>
+                        </table>
 
-                    <h3 id="classification_models_results">Comparison of Algorithms</h3>
-
-                    <table>
-                        <tr>
-                            <th>Algorithm</th>
-                            <th>Accuracy Rate</th>
-                        </tr>
-                        <tr>
-                            <td>Logistic Regression</td>
-                            <td>76%</td>
-                        </tr>
-                        <tr>
-                            <td>PCA after K-Means Clustering</td>
-                            <td>74%</td>
-                        </tr>
-                        <tr>
-                            <td>Isomap after K-Means Clustering</td>
-                            <td>72%</td>
-                        </tr>
-                        <tr>
-                            <td>Gaussian Naive Bayes</td>
-                            <td>75%</td>
-                        </tr>
-                        <tr>
-                            <td>???</td>
-                            <td>85%</td>
-                        </tr>
-                    </table>
+                        <!-- ROC Curve Image -->
+                        <div class="image-container">
+                            <img src="https://raw.githubusercontent.com/PhyloGrok/DiabetesML/main/plot_image/ROC_Curves.png" alt="ROC Curves for Diabetes Classification">
+                        </div>
+                    </div>
                 </body>
                 </html>
                 <br>
