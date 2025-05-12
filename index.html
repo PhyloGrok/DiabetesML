@@ -335,12 +335,12 @@
                 </p>
                 <script src="https://gist.github.com/PhyloGrok/DiabetesML/blob/main/Code/libraries.py"></script>
 
-                <h3>Logistic Regression</br></h3>
+                <h3></br>Logistic Regression</h3>
                 <p>
                     Logistic regression is a statistical model that predicts the probability of a binary outcome.  It models the relationship between the input features and the log-odds of the outcome.  We used logistic regression as a baseline linear model for comparison.
                 </p>
 
-                <h3>K-Means Clustering</h3>
+                <h3></br>K-Means Clustering</h3>
                 <p>
                     K-Means clustering is an unsupervised learning algorithm that partitions data into k clusters, where each data point belongs to the cluster with the nearest mean (centroid).  We applied K-Means to the dataset to explore potential groupings of individuals based on their clinical features, and then evaluated if those groupings correlated with diabetes.
                 </p>
@@ -350,17 +350,17 @@
                     Principal Component Analysis (PCA) is a dimensionality reduction technique that transforms high-dimensional data into a lower-dimensional space while retaining the most significant information.  We applied PCA to reduce the dimensionality of the data before performing K-Means clustering.  This was done to potentially improve the clustering performance and to visualize the data in a lower-dimensional space.
                 </p>
 
-                <h3>Isomap followed by K-Means</br></h3>
+                <h3></br>Isomap followed by K-Means</h3>
                  <p>
                     Isometric Mapping (Isomap) is a nonlinear dimensionality reduction technique that preserves the geodesic distances between data points. We applied Isomap to capture non-linear relationships in the data before applying K-Means clustering. This approach is useful when the data lies on a manifold, and linear methods like PCA are not sufficient.
                 </p>
 
-                <h3>Gaussian Naive Bayes</br></h3>
+                <h3></br>Gaussian Naive Bayes</h3>
                 <p>
                     Gaussian Naive Bayes is a probabilistic classifier based on Bayes' theorem.  It assumes that the features are normally distributed and conditionally independent given the class label.  We used Gaussian Naive Bayes as a simple and efficient non-linear classifier.
                 </p>
 
-                <h3>Shallow and Deep Perceptrons</br></h3>
+                <h3></br>Shallow and Deep Perceptrons</h3>
                 <p>
                     We also employed neural networks, specifically shallow and deep perceptrons, to model the relationship between input features and diabetes.  Shallow perceptrons refer to neural networks with a single hidden layer, while deep perceptrons have multiple hidden layers.  Neural networks are capable of learning complex non-linear relationships in the data. We hypothesized that deep perceptrons might capture more intricate patterns in the data compared to simpler models.
                 </p>
