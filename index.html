@@ -551,9 +551,9 @@
                     </figure>
                 </div>
 
-                <!-- K-Means Clustering Results -->
+                 <!-- K-Means Clustering Results -->
                 <h3 id="kmeans_clustering_results">Comparision of K-Means Clustering Results</h3>
-                <p style="font-weight: bold; font-size: 16px;">Cumulative Plots (PCA and Isomap)</p>
+                <p style="font-weight: bold; font-size: 18px;">Cumulative Plots (PCA and Isomap)</p>
                 <p>The results are presented through two cumulative variance plots: one for PCA and one for Isomap, applied to the PIMA Indians Diabetes dataset. The PCA plot illustrates the explained variance ratios, showing the cumulative proportion of variance captured by the principal components as the dataset is reduced in dimensionality. In contrast, the Isomap plot approximates cumulative variance using reconstruction error, since Isomap does not directly provide explained variance ratios. These plots help compare the effectiveness of each dimensionality reduction technique in capturing the underlying structure of the dataset. While PCA provides a clear and quantifiable measure of variance, Isomap offers an alternative perspective by evaluating how well the data can be reconstructed after dimensionality reduction, highlighting differences in how each method preserves the intrinsic characteristics of the diabetes data.</p>
                 <div class="image-container-2">
                     <figure class="figure">
@@ -566,8 +566,8 @@
                     </figure>
                 </div>
                 <br>
-                
-                <p style="font-weight: bold; font-size: 16px;">Cluster Scatterplots (PCA and Isomap)</p>
+
+                <p style="font-weight: bold; font-size: 18px;">Cluster Scatterplots (PCA and Isomap)</p>
                 <p> The two K-Means clustering scatterplots, one after PCA and one after Isomap, illustrate how dimensionality reduction affects cluster separation in the PIMA Indians Diabetes dataset. The PCA-based plot reduces the data to two principal components, providing a clear view of cluster separation when the data is linearly separable. However, if the data has non-linear relationships, the clusters may appear less distinct or even overlap, as PCA focuses on capturing variance along linear axes. In contrast, the Isomap-based plot uses non-linear dimensionality reduction to preserve the global structure of the data. This approach allows Isomap to better capture complex, non-linear relationships, resulting in more accurate and distinct cluster separation. Overall, while PCA is effective for linear separations, Isomap offers a clearer representation of clusters when the data involves non-linear patterns. </p>
                 <div class="image-container-3">
                     <figure class="figure">
@@ -577,18 +577,29 @@
                     <figure class="figure">
                         <img src="https://raw.githubusercontent.com/PhyloGrok/DiabetesML/main/plot_image/Isomap_Kmeans.png" alt="Kmean after Isomap">
                         <figcaption>K-means Cluster Plot after Isomap</figcaption>
-                    </figure>               
+                    </figure>
                 </div>
-               
+                <br>
 
-                <!-- Isomap Clustering -->
-                <h3 id="isomap_kmeans_clustering_results">Isomap → K-Means Clustering Results</h3>
-                <p>The Isomap followed by K-Means model confusion matrix is shown below.</p>
-                <figure class="figure">
-                    <img src="https://raw.githubusercontent.com/PhyloGrok/DiabetesML/main/plot_image/PCA_confusion_matrix.png" alt="PCA followed by K-Means Confusion Matrix">
-                    <figcaption>PCA followed by K-Means Confusion Matrix</figcaption>
-                </figure>
-                
+                <p style="font-weight: bold; font-size: 18px;">Confusion Matrices (PCA and Isomap)</p>
+                <p> The two confusion matrices, one for the K-Means clustered PIMA Diabetes dataset after PCA and the other after Isomap, offer a way to assess the clustering performance. A confusion matrix is used to evaluate the accuracy of classification by showing the counts of true positives, true negatives, false positives, and false negatives. </p>
+                <div class="image-container-4">
+                    <figure class="figure">
+                        <img src="https://raw.githubusercontent.com/PhyloGrok/DiabetesML/main/plot_image/PCA_confusion_matrix (1).png" alt="PCA followed by K-Means Confusion Matrix">
+                        <figcaption>PCA followed by K-Means Confusion Matrix</figcaption>
+                    </figure>
+                    <figure class="figure">
+                        <img src="https://raw.githubusercontent.com/PhyloGrok/DiabetesML/main/plot_image/Isomap_ConfusionMatrix (1).png" alt="Isomap followed by K-Means Confusion Matrix">
+                        <figcaption>Isomap followed by K-Means Confusion Matrix</figcaption>
+                    </figure>
+                </div>
+                <br>
+
+
+
+
+
+
 
                 <!-- Gaussian Naive Bayes -->
                 <h3 id="gaussian_naive_bayes_results">Gaussian Naive Bayes Results</h3>
@@ -599,7 +610,7 @@
                     <figcaption>Gaussian Naive Bayes Confusion Matrix</figcaption>
                 </figure>
 
-                
+
 
                 <style>
                     .image-container-1 {
@@ -651,6 +662,23 @@
                         text-align: center;
                     }
                     .image-container-3 img {
+                        max-width: 100%;
+                        height: auto;
+                        display: block;
+                    }
+                    .image-container-4 {
+                        display: flex;
+                        flex-wrap: wrap;
+                        gap: 10px;
+                        width: 100%;
+                        justify-content: center;
+                    }
+                    .image-container-4 .figure {
+                        flex: 1 1 calc(50% - 10px); /* Adjust to keep images side by side */
+                        max-width: calc(50% - 10px);
+                        text-align: center;
+                    }
+                    .image-container-4 img {
                         max-width: 100%;
                         height: auto;
                         display: block;
