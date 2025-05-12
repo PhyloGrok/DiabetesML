@@ -423,7 +423,6 @@
                 <p>
                     This section presents the results of applying the machine learning models described in the Methods section to the Pima Indians Diabetes Dataset.
                 </p>
-                <!-- Accuracy Score Table -->
                 <!DOCTYPE html>
                 <html lang="en">
                 <head>
@@ -496,6 +495,9 @@
                     <p>
                         The table presents the accuracy scores of various machine learning algorithms, evaluated on the PIMA Indians Diabetes dataset. These scores reflect the performance of each model in predicting diabetes, highlighting their predictive effectiveness. Accompanying this is a figure showing the ROC curves for each algorithm, with the corresponding AUC (Area Under the Curve) scores, providing a visual representation of the models' classification performance and discriminative ability.
                     </p>
+                    <p>
+                        To understand the ROC curve, the closer the curve is to the top-left corner, the better the model is at classifying the data. The area under the curve (AUC) represents the model's ability to discriminate between the two classes: a higher AUC indicates better performance. The diagonal line represents a random classifier, and any curve above this line indicates that the model is performing better than random chance.
+                    </p>
                     <div class="container">
                         <!-- Accuracy Score Table -->
                         <div class="table-container">
@@ -550,9 +552,8 @@
                         <figcaption>Logistic Regression ROC Curve</figcaption>
                     </figure>
                 </div>
-                <br>
 
-                 <!-- K-Means Clustering Results -->
+                <!-- K-Means Clustering Results -->
                 <h3 id="kmeans_clustering_results">Comparision of K-Means Clustering Results</h3>
                 <p style="font-weight: bold; font-size: 18px;">Cumulative Plots (PCA and Isomap)</p>
                 <p>The results are presented through two cumulative variance plots: one for PCA and one for Isomap, applied to the PIMA Indians Diabetes dataset. The PCA plot illustrates the explained variance ratios, showing the cumulative proportion of variance captured by the principal components as the dataset is reduced in dimensionality. In contrast, the Isomap plot approximates cumulative variance using reconstruction error, since Isomap does not directly provide explained variance ratios. These plots help compare the effectiveness of each dimensionality reduction technique in capturing the underlying structure of the dataset. While PCA provides a clear and quantifiable measure of variance, Isomap offers an alternative perspective by evaluating how well the data can be reconstructed after dimensionality reduction, highlighting differences in how each method preserves the intrinsic characteristics of the diabetes data.</p>
@@ -596,7 +597,6 @@
                 </div>
                 <br>
                 <br>
-                <br>
 
                 <!-- 3D PCA scatterplot -->
                 <h3 id="3D_PCA">3 Dimensional PCA Scatterplot</h3>
@@ -623,6 +623,14 @@
 
                 <!-- Shallow and Deep Perceptrons -->
                 <h3 id="shallow_and_deep_perceptrons_results">Shallow and Deep Perceptrons Results</h3>
+                <p> The image of ROC curves compares the performance of shallow and deep perceptron models for predicting diabetes in the PIMA dataset. Both models use different architectures: the shallow perceptron has a single layer, while the deep perceptron has multiple hidden layers. The ROC curve (Receiver Operating Characteristic curve) plots the true positive rate (TPR) against the false positive rate (FPR), showing how well the models distinguish between the positive and negative classes.</p>
+                <div class="image-container-7">
+                    <figure class="figure">
+                        <img src="https://raw.githubusercontent.com/PhyloGrok/DiabetesML/main/plot_image/Perceptrons_ROC.png" alt="Shallow and Deep Perceptrons ROC Curves">
+                        <figcaption>Shallow and Deep Perceptrons ROC Curves</figcaption>
+                    </figure>
+                </div>
+                <br>
 
 
 
@@ -740,7 +748,28 @@
                         display: block;
                     }
 
-                    .figure {
+                    .image-container-7 {
+                        display: flex;
+                        flex-wrap: wrap;
+                        gap: 10px;
+                        width: 100%;
+                        justify-content: flex-start; /* Aligns items to the left */
+                        align-items: stretch;
+                    }
+
+                    .image-container-7 .figure {
+                        flex: 1 1 calc(50% - 10px); /* Adjust to keep images side by side */
+                        max-width: calc(50% - 10px);
+                        text-align: center;
+                    }
+
+                    .image-container-7 img {
+                        max-width: 92%;
+                        height: auto;
+                        display: block;
+                    }
+
+                     .figure {
                         max-width: 600px;
                         height: auto;
                         display: inline-block;
@@ -748,7 +777,6 @@
                         padding: 0;
                         text-align: center;
                     }
-
                     .figure figcaption {
                         margin-top: 0.5rem;
                         font-size: 0.9em;
