@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -274,7 +273,7 @@
             border-top: 5px solid #34495e;
             margin-left: 0.5rem;
         }
-ul li{color:#34495e !important}
+
 
     </style>
 </head>
@@ -291,8 +290,11 @@ ul li{color:#34495e !important}
     <header class="bg-merlot shadow-md py-4">
         <div class="container mx-auto px-4 flex justify-between items-center">
             <h1 class="text-xl font-semibold text-white">Pima Indian Diabetes Machine Learning</h1>
-            <img src="https://www.merck.com/wp-content/themes/cex-wpvip-mhh-merck-mco-theme/images/site-logo.svg" />
-            <img style="width:200px" src="https://cnms.umbc.edu/wp-content/uploads/sites/185/2024/01/CNMS-logo-copy.png" />
+            <nav class="space-x-4">
+                <a href="#" class="text-merlot-light hover:text-white font-medium">Get started</a>
+                <a href="#" class="text-merlot-light hover:text-white font-medium">Reference</a>
+                <a href="#" class="text-merlot-light hover:text-white font-medium">Articles</a>
+            </nav>
         </div>
     </header>
 
@@ -300,37 +302,67 @@ ul li{color:#34495e !important}
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div class="md:col-span-2">
                <h1 class="text-2xl font-bold text-black-1000 mb-4">Comparing the Machine Learning Models using Pima Indian Diabetes Dataset</h1>
-                <p><strong>Authors:</strong>Li Lan Fang, Aimee Icaza, Ketsia Pierrelus</p>
+                <p><strong>Authors:</strong> Aimee Icaza, Ketsia Perreklus, Li lan Fang</p>
                 <p><strong>Publication Date:</strong> May TBD, 2025</p>
                 <section class="mb-8">
-                <h2 class="text-2xl font-bold text-gray-800 mb-4" id = "introduction"></br>Introduction to the PIMA Indian Datset</h2>
-                <p></br>Diabetes is a chronic medical condition that affects how the body processes sugar. It occurs when the body either does not produce enough insulin, a hormone responsible for regulating blood sugar, or cannot effectively use the insulin it produces. The two main types of diabetes are Type 1, often diagnosed in children and young adults, and Type 2, which is more common and typically develops in adults. Type 2 diabetes is closely linked with lifestyle factors such as diet, exercise, and body weight. If left unmanaged, diabetes can lead to severe health complications, including heart disease, kidney failure, and vision loss. <br>
+                <h2 class="text-2xl font-bold text-gray-800 mb-4", id = "introduction">Introduction to the PIMA Indian Datset</h2>
+                <p>Diabetes is a chronic medical condition that affects how the body processes sugar. It occurs when the body either does not produce enough insulin, a hormone responsible for regulating blood sugar, or cannot effectively use the insulin it produces. The two main types of diabetes are Type 1, often diagnosed in children and young adults, and Type 2, which is more common and typically develops in adults. Type 2 diabetes is closely linked with lifestyle factors such as diet, exercise, and body weight. If left unmanaged, diabetes can lead to severe health complications, including heart disease, kidney failure, and vision loss. <br>
                 </p>
-                <p></br>To better understand and analyze the onset of diabetes, researchers have utilized data-driven methods. Our Machine Learning class used a well-known dataset, the Pima Indians Diabetes dataset. The National Institute of Diabetes and Digestive and Kidney Diseases conducted research in Arizona and collected medical information from female patients of Pima Indian heritage aged 21 and older [2]. The dataset is commonly utilized in machine learning and statistical analysis to create models and visualizations that illustrate patterns within the diabetes data. The dataset comprises several vital metrics, including:
+                <p>To better understand and analyze the onset of diabetes, researchers have utilized data-driven methods. Our Machine Learning class used a well-known dataset, the Pima Indians Diabetes dataset. The National Institute of Diabetes and Digestive and Kidney Diseases conducted research in Arizona and collected medical information from female patients of Pima Indian heritage aged 21 and older [2]. The dataset is commonly utilized in machine learning and statistical analysis to create models and visualizations that illustrate patterns within the diabetes data. The dataset comprises several vital metrics, including:
                   <ul>
-                    <li><strong></br>Pregnancies</strong> – Number of times the patient has been pregnant.</li>
+                    <li><strong>Pregnancies</strong> – Number of times the patient has been pregnant.</li>
                     <li><strong>Glucose</strong> – Plasma glucose concentration measured two hours after an oral glucose tolerance test.</li>
-                    <li><strong>Blood Pressure</strong> – Diastolic blood pressure (mm Hg).</li>
-                    <li><strong>Skin Thickness</strong> – Triceps skinfold thickness (mm), which is a measure of body fat.</li>
+                    <li><strong>BloodPressure</strong> – Diastolic blood pressure (mm Hg).</li>
+                    <li><strong>SkinThickness</strong> – Triceps skinfold thickness (mm), which is a measure of body fat.</li>
                     <li><strong>Insulin</strong> – Serum insulin (μU/mL).</li>
                     <li><strong>BMI</strong> – Body mass index, calculated as weight in kilograms divided by the square of height in meters.</li>
                     <li><strong>Diabetes Pedigree(DP) Function</strong> – A function that scores the likelihood of diabetes based on family history.</li>
                     <li><strong>Age</strong> – Age of the patient (years).</li>
-                    <li><strong> Diabetes (Outcome)</strong> – A binary value: 0 indicates the patient is not diabetic, and 1 indicates the patient is diabetic.</li>
+                    <li><strong> Diabetes(Outcome)</strong> – A binary value: 0 indicates the patient is not diabetic, and 1 indicates the patient is diabetic.</li>
                   </ul>
                 </p>
 
-                <p></br>This dataset comprises approximately 768 entries, each corresponding to a single individual. The columns represent various medical indicators that may impact the likelihood of diabetes. In our Machine Learning class, we used the Pima dataset to explore several algorithms, including logistic regression, confusion matrix evaluation, K-means clustering, and Gaussian Mixture Models. Each model provided a visual representation of the dataset, helping better understand patterns, comparisons, classifications, and clustering within the data.
+                <p>This dataset comprises approximately 768 entries, each corresponding to a single individual. The columns represent various medical indicators that may impact the likelihood of diabetes. In our Machine Learning class, we used the Pima dataset to explore several algorithms, including logistic regression, confusion matrix evaluation, K-means clustering, and Gaussian Mixture Models. Each model provided a visual representation of the dataset, helping better understand patterns, comparisons, classifications, and clustering within the data.
                 </p>
             </section>
 
 <!-- Methods START HERE -->
 
-            <section id="methods"></br>
+            <section id="methods">
                 <h2 class="text-2xl font-bold text-gray-800 mb-4">Methods</h2>
-                <h3></br>Libraries</h3>
                 <p>
-                  This study investigates various machine learning techniques to predict the onset of diabetes among Pima Indian women. The analysis was conducted in Python utilizing a suite of powerful libraries for data manipulation, visualization, and machine learning modeling. For data handling we used NumPy for numerical operations and Pandas for structured data manipulation. Visualization was supported by Matplotlib Seaborn and Plotly Express to explore patterns and present results effectively. Machine learning models were implemented using Scikit-learn while deep learning components leveraged the TensorFlow and Keras frameworks.
+                    In this study, we employed a variety of machine learning models to predict the onset of diabetes in Pima Indian women. The analysis was performed using Python <span class="citation" data-cites="Python">(<a href="#ref-Python" role="doc-biblioref">Van Rossum and Drake 2009</a>)</span>, leveraging libraries such as NumPy <span class="citation" data-cites="harris2020array">(<a href="#ref-harris2020array" role="doc-biblioref">Harris et al. 2020</a>)</span>, Pandas <span class="citation" data-cites="pandas">(<a href="#ref-pandas" role="doc-biblioref">McKinney 2010</a>)</span>, and Scikit-learn <span class="citation" data-cites="pedregosa2011scikit">(<a href="#ref-pedregosa2011scikit" role="doc-biblioref">Pedregosa et al. 2011</a>)</span>.  The following section describes the machine learning methodologies utilized.
+                </p>
+                <script src="https://gist.github.com/PhyloGrok/DiabetesML/blob/main/Code/libraries.py"></script>
+
+                <h3>Logistic Regression</h3>
+                <p>
+                    Logistic regression is a statistical model that predicts the probability of a binary outcome.  It models the relationship between the input features and the log-odds of the outcome.  We used logistic regression as a baseline linear model for comparison.
+                </p>
+
+                <h3>K-Means Clustering</h3>
+                <p>
+                    K-Means clustering is an unsupervised learning algorithm that partitions data into k clusters, where each data point belongs to the cluster with the nearest mean (centroid).  We applied K-Means to the dataset to explore potential groupings of individuals based on their clinical features, and then evaluated if those groupings correlated with diabetes.
+                </p>
+
+                <h3>Principal Component Analysis (PCA) followed by K-Means</h3>
+                <p>
+                    Principal Component Analysis (PCA) is a dimensionality reduction technique that transforms high-dimensional data into a lower-dimensional space while retaining the most significant information.  We applied PCA to reduce the dimensionality of the data before performing K-Means clustering.  This was done to potentially improve the clustering performance and to visualize the data in a lower-dimensional space.
+                </p>
+
+                <h3>Isomap followed by K-Means</h3>
+                 <p>
+                    Isometric Mapping (Isomap) is a nonlinear dimensionality reduction technique that preserves the geodesic distances between data points. We applied Isomap to capture non-linear relationships in the data before applying K-Means clustering. This approach is useful when the data lies on a manifold, and linear methods like PCA are not sufficient.
+                </p>
+
+                <h3>Gaussian Naive Bayes</h3>
+                <p>
+                    Gaussian Naive Bayes is a probabilistic classifier based on Bayes' theorem.  It assumes that the features are normally distributed and conditionally independent given the class label.  We used Gaussian Naive Bayes as a simple and efficient non-linear classifier.
+                </p>
+
+                <h3>Shallow and Deep Perceptrons</h3>
+                <p>
+                    We also employed neural networks, specifically shallow and deep perceptrons, to model the relationship between input features and diabetes.  Shallow perceptrons refer to neural networks with a single hidden layer, while deep perceptrons have multiple hidden layers.  Neural networks are capable of learning complex non-linear relationships in the data. We hypothesized that deep perceptrons might capture more intricate patterns in the data compared to simpler models.
                 </p>
                 <pre><code class="language-python">
                     # Data manipulation libraries
@@ -383,87 +415,15 @@ ul li{color:#34495e !important}
                     df.head()
                     df.dropna(axis=0, how='any', inplace=True)
                 </code></pre>
-
-                <h3></br>Logistic Regression</h3>
-                <p>
-                Logistic regression is a fundamental linear classification algorithm that estimates the probability of a binary outcome based on the logistic function. 
-                It models the relationship between a set of input features and the log-odds of the target variable  
-                (<a href="https://statquest.org/video-index/" target="_blank">StatQuest, 2025</a>). 
-                In this study, logistic regression served as a baseline model for comparison against more complex algorithms. 
-                This model was implemented using Scikit-learn’s LogisticRegression module, and its performance was evaluated using accuracy and confusion matrices.
-                </p>
-
-                <h3></br>K-Means Clustering</h3>
-                 <p>
-                  K-Means is an unsupervised clustering algorithm that partitions data into k distinct groups by minimizing the variance within each cluster 
-                  (<a href="https://www.datacamp.com/tutorial/k-means-clustering-python" target="_blank">Babitz, 2018</a>). 
-                  We employed K-Means to explore natural groupings in the dataset based on clinical features. 
-                  These groupings were then examined to determine whether they aligned with diabetes diagnoses. 
-                  The clustering was performed using Scikit-learn’s KMeans module.
-                </p>
-
-                <h3></br>Principal Component Analysis (PCA) followed by K-Means</br></h3>
-                <p>
-                To enhance clustering performance and aid visualization, we applied Principal Component Analysis (PCA) before performing K-Means clustering. 
-                PCA reduces high-dimensional data to a smaller number of components that capture the most variance, which can help highlight meaningful structure 
-                (<a href="https://statquest.org/video-index/" target="_blank">StatQuest, 2025</a>). 
-                Using Scikit-learn’s PCA module, we projected the data into two dimensions and then applied K-Means clustering. 
-                </p>
-
-                <h3></br>Isomap followed by K-Means</h3>
-                 <p>
-                    Isomap is a nonlinear dimensionality reduction method that preserves geodesic distances, making it effective for data lying on a curved manifold 
-                    (<a href="https://statquest.org/video-index/" target="_blank">StatQuest, 2025</a>). 
-                    To capture complex nonlinear patterns in the dataset, we used Isomap from Scikit-learn before applying K-Means clustering. 
-                    This approach allowed the clustering algorithm to operate on a transformed space that better reflected the data’s intrinsic geometry, 
-                    offering valuable insights into the nonlinear structure of the data.
-                </p>
-
-                <h3></br>Gaussian Naive Bayes</h3>
-                  <p>
-                  Gaussian Naive Bayes is a probabilistic classifier based on Bayes’ theorem, which assumes that the features are normally distributed and independent given the class label 
-                  (<a href="https://builtin.com/artificial-intelligence/gaussian-naive-bayes" target="_blank">Martins, 2023</a>). 
-                  It is a simple yet efficient model well-suited for baseline comparisons. 
-                  This classifier was implemented using Scikit-learn’s GaussianNB, and its performance was evaluated using standard classification metrics.
-                 </p>
-
-                <h3></br>Shallow and Deep Perceptrons</h3>
-                <p>
-                To model complex nonlinear relationships, we utilized neural networks in the form of shallow and deep perceptrons. 
-                A shallow perceptron includes a single hidden layer, whereas deep perceptrons contain multiple hidden layers, allowing for deeper representation learning 
-                (<a href="https://statquest.org/video-index/" target="_blank">StatQuest, 2025</a>). 
-                These models were built using Keras' Sequential API, with layers defined using Dense components. 
-                We hypothesized that deeper architectures could uncover more subtle patterns in the data, and our results supported this, 
-                with deep perceptrons outperforming shallow ones in classification accuracy.
-                </p>
-                <h3></br>Model Comparison</h3>
-                <p>
-                To compare the effectiveness of each approach, we computed the accuracy scores for all models. 
-                Logistic regression, Gaussian Naive Bayes, shallow and deep neural networks, and the K-Means clustering results 
-                (with and without dimensionality reduction) were assessed side-by-side. 
-                This comparative analysis highlighted the strengths and limitations of linear, nonlinear, and deep learning models in predicting diabetes onset.
-                </p>
             </section>
 
             <!-- Result -->
-
             <section id="results">
                 <h2>Results</h2>
                 <p>
-                    This section presents the outcomes of applying the machine learning models described in the Methods section to the Pima Indians Diabetes Dataset.
+                    This section presents the results of applying the machine learning models described in the Methods section to the Pima Indians Diabetes Dataset.
                 </p>
-                <p>
-                    The code for generating ROC curves was sourced from <a href="https://www.datacamp.com/tutorial/understanding-logistic-regression-python">DataCamp</a>.
-                </p>
-                <p>
-                    The code for plotting confusion matrices was adapted from <a href="https://www.geeksforgeeks.org/how-to-plot-confusion-matrix-with-labels-in-sklearn/">GeeksforGeeks</a>.
-                </p>
-                <p>
-                    The code for visualizing cumulative reconstruction error after applying Isomap was generated by Copilot AI.
-                </p>
-                <p>
-                    All other plots were referenced from <a href="https://jakevdp.github.io/PythonDataScienceHandbook/">Jake VanderPlas' Python Data Science Handbook</a>.
-                </p>
+                <!-- Accuracy Score Table -->
                 <!DOCTYPE html>
                 <html lang="en">
                 <head>
@@ -471,124 +431,70 @@ ul li{color:#34495e !important}
                     <meta name="viewport" content="width=device-width, initial-scale=1.0">
                     <title>Comparison of Algorithms</title>
                     <style>
-                        /* Container for side-by-side layout */
-                        .container {
-                            display: flex;
-                            gap: 20px;
-                            justify-content: center;
-                            align-items: center;
-                            width: 100%;
-                        }
-
-                        /* Style for the table */
-                        .table-container {
-                            flex: 1; /* Makes the table smaller */
-                            max-width: 45%; /* Limits the table size */
-                        }
-
                         table {
-                            border-collapse: collapse;
-                            border: 1px solid #ddd;
                             width: 100%;
+                            border-collapse: collapse;
                         }
 
                         th, td {
-                            border: 1px solid black;
+                            border: 1px solid black; /* Full borders like Excel */
                             padding: 10px;
                             text-align: left;
                         }
 
                         th {
-                            background-color: #f2f2f2;
+                            background-color: #f2f2f2; /* Light background for headers */
                         }
 
                         tr:nth-child(even) {
-                            background-color: #f9f9f9;
-                        }
-
-                        /* Style for the image */
-                        .image-container {
-                            flex: 2; /* Makes the image larger */
-                            max-width: 55%;
-                        }
-
-                        .image-container img {
-                            width: 100%;
-                            height: auto;
-                            object-fit: contain;
-                        }
-
-                        /* Responsive design for smaller screens */
-                        @media (max-width: 768px) {
-                            .container {
-                                flex-direction: column;
-                                align-items: center;
-                            }
-
-                            .table-container, .image-container {
-                                max-width: 100%;
-                            }
+                            background-color: #f9f9f9; /* Alternating row colors */
                         }
                     </style>
                 </head>
                 <body>
-                    <h3 id="classification_models_results"></br>Overall Summary: Comparison of Algorithms</h3>
-                    <p>
-                        The table presents the accuracy scores of various machine learning algorithms, evaluated on the PIMA Indians Diabetes dataset. These scores reflect the performance of each model in predicting diabetes, highlighting their predictive effectiveness. Accompanying this is a figure showing the ROC curves for each algorithm, with the corresponding AUC (Area Under the Curve) scores, providing a visual representation of the models' classification performance and discriminative ability.
-                    </p>
-                    <p></br>
-                        To understand the ROC curve, the closer the curve is to the top-left corner, the better the model is at classifying the data. The area under the curve (AUC) represents the model's ability to discriminate between the two classes: a higher AUC indicates better performance. The diagonal line represents a random classifier, and any curve above this line indicates that the model is performing better than random chance.
-                    </p>
-                    <div class="container">
-                        <!-- Accuracy Score Table -->
-                        <div class="table-container">
-                            <table>
-                                <tr>
-                                    <th>Algorithm</th>
-                                    <th>Accuracy Rate</th>
-                                </tr>
-                                <tr>
-                                    <td>Logistic Regression</td>
-                                    <td>76%</td>
-                                </tr>
-                                <tr>
-                                    <td>K-Means Clustering</td>
-                                    <td>74%</td>
-                                </tr>
-                                <tr>
-                                    <td>PCA after K-Means Clustering</td>
-                                    <td>74%</td>
-                                </tr>
-                                <tr>
-                                    <td>Isomap after K-Means Clustering</td>
-                                    <td>72%</td>
-                                </tr>
-                                <tr>
-                                    <td>Gaussian Naive Bayes</td>
-                                    <td>75%</td>
-                                </tr>
 
-                            </table>
-                        </div>
+                    <h3 id="classification_models_results">Comparison of Algorithms</h3>
 
-                        <!-- ROC Curve Image -->
-                        <div class="image-container">
-                            <img src="https://raw.githubusercontent.com/PhyloGrok/DiabetesML/main/plot_image/ROC_Curves.png" alt="ROC Curves">
-                        </div>
-                    </div>
+                    <table>
+                        <tr>
+                            <th>Algorithm</th>
+                            <th>Accuracy Rate</th>
+                        </tr>
+                        <tr>
+                            <td>Logistic Regression</td>
+                            <td>76%</td>
+                        </tr>
+                        <tr>
+                            <td>PCA after K-Means Clustering</td>
+                            <td>74%</td>
+                        </tr>
+                        <tr>
+                            <td>Isomap after K-Means Clustering</td>
+                            <td>72%</td>
+                        </tr>
+                        <tr>
+                            <td>Gaussian Naive Bayes</td>
+                            <td>75%</td>
+                        </tr>
+                        <tr>
+                            <td>???</td>
+                            <td>85%</td>
+                        </tr>
+                    </table>
                 </body>
                 </html>
                 <br>
 
                 <!-- Logistic Regression Results -->
-                <h3 id="logistic_regression_results"></br>Logistic Regression Results</h3>
-                <p> Upon applying the logistic regression algorithm to the PIMA Diabetes Dataset, two essential performance evaluation plots were generated: the confusion matrix and the ROC curve. The confusion matrix provides a quantitative assessment of the model’s classification accuracy, detailing the number of true positives, true negatives, false positives, and false negatives. This enables a clear evaluation of the model's ability to correctly classify diabetic and non-diabetic cases, as well as the nature and frequency of its misclassifications. The ROC curve, on the other hand, visualizes the model's diagnostic performance by plotting the true positive rate against the false positive rate across different decision thresholds. This plot offers a comprehensive view of the model's sensitivity and specificity, with the area under the curve (AUC) serving as a metric for overall model discrimination. Together, these plots provide a robust analysis of the logistic regression model's efficacy in predicting diabetes. </p>
+                <h3 id="logistic_regression_results">Logistic Regression Results</h3>
+                <p>The logistic regression model achieved an accuracy of 0.75. The confusion matrix for the test data is shown below.</p>
 
                 <div class="image-container-1">
                     <figure class="figure">
                         <img src="https://raw.githubusercontent.com/PhyloGrok/DiabetesML/main/plot_image/LogisticRegression_confusionmatrix.png" alt="Logistic Regression Confusion Matrix">
                         <figcaption>Logistic Regression Confusion Matrix</figcaption>
                     </figure>
+
                     <figure class="figure">
                         <img src="https://raw.githubusercontent.com/PhyloGrok/DiabetesML/main/plot_image/LogisticRegression_ROC.png" alt="Logistic Regression ROC Curve">
                         <figcaption>Logistic Regression ROC Curve</figcaption>
@@ -596,85 +502,48 @@ ul li{color:#34495e !important}
                 </div>
 
                 <!-- K-Means Clustering Results -->
-                <h3 id="kmeans_clustering_results"></br>Comparision of K-Means Clustering Results</h3>
-                <p style="font-weight: bold; font-size: 18px;">Cumulative Plots (PCA and Isomap)</p>
-                <p>The results are presented through two cumulative variance plots: one for PCA and one for Isomap, applied to the PIMA Indians Diabetes dataset. The PCA plot illustrates the explained variance ratios, showing the cumulative proportion of variance captured by the principal components as the dataset is reduced in dimensionality. In contrast, the Isomap plot approximates cumulative variance using reconstruction error, since Isomap does not directly provide explained variance ratios. These plots help compare the effectiveness of each dimensionality reduction technique in capturing the underlying structure of the dataset. While PCA provides a clear and quantifiable measure of variance, Isomap offers an alternative perspective by evaluating how well the data can be reconstructed after dimensionality reduction, highlighting differences in how each method preserves the intrinsic characteristics of the diabetes data.</p>
-                <div class="image-container-2">
-                    <figure class="figure">
-                        <img src="https://raw.githubusercontent.com/PhyloGrok/DiabetesML/main/plot_image/PCA_CumulativeExplaindVariance (2).png" alt="PCA cumulative">
-                        <figcaption>Cumulative Variance Plot after PCA</figcaption>
-                    </figure>
-                    <figure class="figure">
-                        <img src="https://raw.githubusercontent.com/PhyloGrok/DiabetesML/main/plot_image/Isomap_CumulativeReconstructionError.png" alt="Isomap cumulative">
-                        <figcaption>Cumulative Reconstruction Error after Isomap</figcaption>
-                    </figure>
-                </div>
-                <br>
+                <h3 id="kmeans_clustering_results">K-Means Clustering Results</h3>
+                <p>The PCA followed by K-Means model is shown below.</p>
 
-                <p style="font-weight: bold; font-size: 18px;">Cluster Scatterplots (PCA and Isomap)</p>
-                <p> The two K-Means clustering scatterplots, one after PCA and one after Isomap, illustrate how dimensionality reduction affects cluster separation in the PIMA Indians Diabetes dataset. The PCA-based plot reduces the data to two principal components, providing a clear view of cluster separation when the data is linearly separable. However, if the data has non-linear relationships, the clusters may appear less distinct or even overlap, as PCA focuses on capturing variance along linear axes. In contrast, the Isomap-based plot uses non-linear dimensionality reduction to preserve the global structure of the data. This approach allows Isomap to better capture complex, non-linear relationships, resulting in more accurate and distinct cluster separation. Overall, while PCA is effective for linear separations, Isomap offers a clearer representation of clusters when the data involves non-linear patterns. </p>
-                <div class="image-container-3">
-                    <figure class="figure">
-                        <img src="https://raw.githubusercontent.com/PhyloGrok/DiabetesML/main/plot_image/PCA_Kmean.png" alt="Kmean after PCA">
-                        <figcaption>K-Means Cluster Plot after PCA</figcaption>
-                    </figure>
-                    <figure class="figure">
-                        <img src="https://raw.githubusercontent.com/PhyloGrok/DiabetesML/main/plot_image/Isomap_Kmeans.png" alt="Kmean after Isomap">
-                        <figcaption>K-means Cluster Plot after Isomap</figcaption>
-                    </figure>
-                </div>
-                <br>
+                <figure class="figure">
+                    <img src="https://raw.githubusercontent.com/PhyloGrok/DiabetesML/main/plot_image/PCA_Kmean.png" alt="K-Means Confusion Matrix">
+                    <figcaption>K-Means Confusion Matrix</figcaption>
+                </figure>
 
-                <p style="font-weight: bold; font-size: 18px;">Confusion Matrices (PCA and Isomap)</p>
-                <p> The two confusion matrices, one for the K-Means clustered PIMA Diabetes dataset after PCA and the other after Isomap, offer a way to assess the clustering performance. A confusion matrix is used to evaluate the accuracy of classification by showing the counts of true positives, true negatives, false positives, and false negatives. </p>
-                <div class="image-container-4">
-                    <figure class="figure">
-                        <img src="https://raw.githubusercontent.com/PhyloGrok/DiabetesML/main/plot_image/PCA_confusion_matrix (1).png" alt="PCA followed by K-Means Confusion Matrix">
-                        <figcaption>PCA followed by K-Means Confusion Matrix</figcaption>
-                    </figure>
-                    <figure class="figure">
-                        <img src="https://raw.githubusercontent.com/PhyloGrok/DiabetesML/main/plot_image/Isomap_ConfusionMatrix (1).png" alt="Isomap followed by K-Means Confusion Matrix">
-                        <figcaption>Isomap followed by K-Means Confusion Matrix</figcaption>
-                    </figure>
-                </div>
-                <br>
-                <br>
+                <h3 id="pca_kmeans_confusion_matrix_results">PCA → K-Means Clustering Results</h3>
+                <p>The PCA followed by K-Means model confusion matrix is shown below.</p>
 
-                <!-- 3D PCA scatterplot -->
-                <h3 id="3D_PCA">3 Dimensional PCA Scatterplot</h3>
-                <p>The 3D scatterplot of PCA for the PIMA Diabetes dataset visually represents the data reduced to three principal components (PC1, PC2, and PC3). It helps reveal patterns, clusters, and relationships between different features in the dataset. The scatterplot shows how well the data separates, potentially distinguishing diabetic and non-diabetic groups based on their feature values. By projecting the high-dimensional data into a 3D space, it offers insights into the variance captured by the first three components and helps identify any outliers or trends. This visualization aids in understanding the structure of the data and can inform further analysis or model selection.</p>
-                <div class="image-container-5">
-                    <figure class="figure">
-                        <img src="https://raw.githubusercontent.com/PhyloGrok/DiabetesML/main/plot_image/PCA_3D.png" alt="PCA 3D Plot">
-                        <figcaption>3-Dimensional Scatterplots of PCA (3 components)</figcaption>
-                    </figure>
-                </div>
-                <br>
+                <figure class="figure">
+                    <img src="https://raw.githubusercontent.com/PhyloGrok/DiabetesML/main/plot_image/PCA_confusion_matrix.png" alt="PCA followed by K-Means Confusion Matrix">
+                    <figcaption>PCA followed by K-Means Confusion Matrix</figcaption>
+                </figure>
 
+                <!-- Isomap Clustering -->
+                <h3 id="isomap_kmeans_clustering_results">Isomap → K-Means Clustering Results</h3>
+                <p>The Isomap followed by K-Means model confusion matrix is shown below.</p>
+
+                <figure class="figure">
+                    <img src="https://raw.githubusercontent.com/PhyloGrok/DiabetesML/main/plot_image/Isomap_Kmeans.png" alt="Isomap followed by K-Means Confusion Matrix">
+                    <figcaption>Isomap followed by K-Means Confusion Matrix</figcaption>
+                </figure>
 
                 <!-- Gaussian Naive Bayes -->
                 <h3 id="gaussian_naive_bayes_results">Gaussian Naive Bayes Results</h3>
-                <p>The Gaussian Naive Bayes (GNB) confusion matrix for the PIMA Diabetes dataset serves as a crucial tool for evaluating the model's classification performance. It displays the counts of true positives, true negatives, false positives, and false negatives, providing insights into how well the model distinguishes between diabetic and non-diabetic individuals.</p>
-                <div class = "image-container-6">
-                    <figure class="figure">
-                        <img src="https://raw.githubusercontent.com/PhyloGrok/DiabetesML/main/plot_image/Gaussian_NB_confusion_matrix.png" alt="Gaussian Naive Bayes Confusion Matrix">
-                        <figcaption>Gaussian Naive Bayes Confusion Matrix</figcaption>
-                    </figure>
-                </div>
-                <br>
+                <p>The Gaussian Naive Bayes model confusion matrix is shown below.</p>
 
-                <!-- Shallow and Deep Perceptrons -->
-                <h3 id="shallow_and_deep_perceptrons_results">Shallow and Deep Perceptrons Results</h3>
-                <p> The image of ROC curves compares the performance of shallow and deep perceptron models for predicting diabetes in the PIMA dataset. Both models use different architectures: the shallow perceptron has a single layer, while the deep perceptron has multiple hidden layers. The ROC curve (Receiver Operating Characteristic curve) plots the true positive rate (TPR) against the false positive rate (FPR), showing how well the models distinguish between the positive and negative classes.</p>
-                <div class="image-container-7">
-                    <figure class="figure">
-                        <img src="https://raw.githubusercontent.com/PhyloGrok/DiabetesML/main/plot_image/Perceptrons_ROC.png" alt="Shallow and Deep Perceptrons ROC Curves">
-                        <figcaption>Shallow and Deep Perceptrons ROC Curves</figcaption>
-                    </figure>
-                </div>
-                <br>
+                <figure class="figure">
+                    <img src="https://raw.githubusercontent.com/PhyloGrok/DiabetesML/main/plot_image/Gaussian_NB_confusion_matrix.png" alt="Gaussian Naive Bayes Confusion Matrix">
+                    <figcaption>Gaussian Naive Bayes Confusion Matrix</figcaption>
+                </figure>
 
+                <!-- ROC Curves -->
+                <h3 id="classification_models_results">ROC Curves Results</h3>
+                <p>The ROC curves of all classification models are shown below.</p>
 
+                <figure class="figure">
+                    <img src="https://raw.githubusercontent.com/PhyloGrok/DiabetesML/main/plot_image/ROC_Curves.png" alt="ROC Curves for Diabetes Classification">
+                    <figcaption>ROC Curves for Diabetes Classification</figcaption>
+                </figure>
 
                 <style>
                     .image-container-1 {
@@ -696,122 +565,8 @@ ul li{color:#34495e !important}
                         height: auto;
                         display: block;
                     }
-                    .image-container-2 {
-                        display: flex;
-                        flex-wrap: wrap;
-                        gap: 10px;
-                        width: 100%;
-                        justify-content: center;
-                    }
-                    .image-container-2 .figure {
-                        flex: 1 1 calc(50% - 10px); /* Adjust to keep images side by side */
-                        max-width: calc(50% - 10px);
-                        text-align: center;
-                    }
-                    .image-container-2 img {
-                        max-width: 100%;
-                        height: auto;
-                        display: block;
-                    }
-                    .image-container-3 {
-                        display: flex;
-                        flex-wrap: wrap;
-                        gap: 10px;
-                        width: 100%;
-                        justify-content: center;
-                    }
-                    .image-container-3 .figure {
-                        flex: 1 1 calc(50% - 10px); /* Adjust to keep images side by side */
-                        max-width: calc(50% - 10px);
-                        text-align: center;
-                    }
-                    .image-container-3 img {
-                        max-width: 100%;
-                        height: auto;
-                        display: block;
-                    }
-                    .image-container-4 {
-                        display: flex;
-                        flex-wrap: wrap;
-                        gap: 10px;
-                        width: 100%;
-                        justify-content: center;
-                        align-items: stretch;
-                    }
-                    .image-container-4 .figure {
-                        flex: 1 1 calc(50% - 10px); /* Adjust to keep images side by side */
-                        max-width: calc(50% - 10px);
-                        text-align: center;
-                    }
-                    .image-container-4 img {
-                        max-width: 100%;
-                        height: 100%;
-                        object-fit: cover;
-                        display: block;
-                    }
-                    .image-container-5 {
-                        display: flex;
-                        flex-wrap: wrap;
-                        gap: 10px;
-                        width: 100%;
-                        justify-content: flex-start; /* Aligns items to the left */
-                        align-items: stretch;
-                    }
 
-                    .image-container-5 .figure {
-                        flex: 1 1 calc(50% - 10px); /* Adjust to keep images side by side */
-                        max-width: calc(50% - 10px);
-                        text-align: center;
-                    }
-
-                    .image-container-5 img {
-                        max-width: 600px;
-                        height: auto;
-                        display: block;
-                    }
-                    .image-container-6 {
-                        display: flex;
-                        flex-wrap: wrap;
-                        gap: 10px;
-                        width: 100%;
-                        justify-content: flex-start; /* Aligns items to the left */
-                        align-items: stretch;
-                    }
-
-                    .image-container-6 .figure {
-                        flex: 1 1 calc(50% - 10px); /* Adjust to keep images side by side */
-                        max-width: calc(50% - 10px);
-                        text-align: center;
-                    }
-
-                    .image-container-6 img {
-                        max-width: 600px;
-                        height: auto;
-                        display: block;
-                    }
-
-                    .image-container-7 {
-                        display: flex;
-                        flex-wrap: wrap;
-                        gap: 10px;
-                        width: 100%;
-                        justify-content: flex-start; /* Aligns items to the left */
-                        align-items: stretch;
-                    }
-
-                    .image-container-7 .figure {
-                        flex: 1 1 calc(50% - 10px); /* Adjust to keep images side by side */
-                        max-width: calc(50% - 10px);
-                        text-align: center;
-                    }
-
-                    .image-container-7 img {
-                        max-width: 600px;
-                        height: auto;
-                        display: block;
-                    }
-
-                     .figure {
+                    .figure {
                         max-width: 600px;
                         height: auto;
                         display: inline-block;
@@ -819,6 +574,7 @@ ul li{color:#34495e !important}
                         padding: 0;
                         text-align: center;
                     }
+
                     .figure figcaption {
                         margin-top: 0.5rem;
                         font-size: 0.9em;
@@ -832,27 +588,27 @@ ul li{color:#34495e !important}
             <section id="discussion">
                 <h2 class="text-2xl font-bold text-gray-800 mb-4">Discussion</h2>
                 <p>
-                    This study evaluates the performance of various machine learning models in predicting diabetes among Pima Indian women, aiming to identify the most effective model for this classification task.
+                    In this study, we compared the performance of several machine learning models in predicting diabetes in Pima Indian women.
+                </p>
+                 <p>
+                    The Logistic Regression model, a linear classifier, achieved a reasonable accuracy.  However, it may not be capable of capturing complex non-linear relationships within the data.
                 </p>
                 <p>
-                    The Logistic Regression model, a linear classifier, demonstrated a reasonable level of accuracy, suggesting that the Pima dataset may exhibit linear separability between the diabetic and non-diabetic classes. Given its satisfactory performance, it can be inferred that the underlying structure of the data aligns well with the assumptions of linear classification.
+                    The K-Means clustering, an unsupervised method, showed limited success in this classification task.  This suggests that the inherent structure of the data, as perceived by K-Means, does not align well with the binary diabetic/non-diabetic outcome.
                 </p>
                 <p>
-                    The K-Means clustering algorithm, an unsupervised method, performed well in classifying the data. This result suggests that the inherent grouping of diabetes outcomes (sick/healthy) is consistent with the binary nature of the target variable, implying that clustering can effectively capture the data's underlying structure.
+                    Dimensionality reduction with PCA or Isomap, followed by K-Means, did not substantially improve the clustering performance.  This indicates that reducing the data's dimensionality, whether linearly or non-linearly, did not help K-Means to better separate the two classes.
                 </p>
                 <p>
-                    Dimensionality reduction techniques such as PCA and Isomap, when followed by K-Means clustering, did not result in a significant improvement in classification performance. In fact, the accuracy dropped following Isomap-based reduction, indicating that non-linear dimensionality reduction failed to enhance K-Means' ability to separate the classes. This finding is further corroborated by the confusion matrices, where PCA outperformed Isomap, showing better true positive and true negative classifications.
+                    The Gaussian Naive Bayes model, although simple and efficient, relies on strong assumptions of feature independence and normality, which might not hold true for this dataset.
                 </p>
                 <p>
-                    The Gaussian Naive Bayes model, while simple and computationally efficient, assumes feature independence and normality, which may be reasonably applicable to this dataset. Its higher accuracy compared to K-Means suggests that these assumptions hold to some degree for the given features, allowing it to achieve a better classification performance.
-                </p>
-                <p>
-                    Both shallow and deep perceptron models, which are neural network-based approaches, demonstrated the capacity to capture complex patterns in the data. The deep perceptron, with its multiple layers, was expected to outperform the shallow perceptron by learning more intricate relationships between features. Although the accuracy scores were not reported, the combined ROC curves and AUC scores strongly indicate that the deep perceptron outperforms the shallow perceptron in predicting diabetes, highlighting the advantage of deeper architectures in modeling more complex feature interactions.
-                </p>
-                <p>
-                    Future work could explore more advanced neural network architectures, hyperparameter tuning, and feature engineering techniques to further enhance predictive performance. Additionally, the application of ensemble methods, which integrate multiple models to improve robustness, warrants further investigation.
+                    The shallow and deep perceptrons, both neural network models, demonstrated the potential of neural networks to learn complex patterns.  The deep perceptron, with its multiple layers, was expected to outperform the shallow perceptron by capturing more intricate feature interactions.
                 </p>
 
+                <p>
+                    Further work might explore more sophisticated neural network architectures, hyperparameter optimization, and feature engineering to improve predictive performance.  Ensemble methods, which combine multiple models, could also be investigated.
+                </p>
             </section>
 
             <section id="acknowledgements">
