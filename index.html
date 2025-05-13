@@ -303,16 +303,9 @@ ul li{color:#34495e !important}
                 <p><strong>Publication Date:</strong> May TBD, 2025</p>
                 <section class="mb-8">
                 <h2 class="text-2xl font-bold text-gray-800 mb-4" id = "introduction"></br>Introduction to the PIMA Indian Datset</h2>
-                <p></br>Diabetes is a chronic medical condition that affects how the body processes sugar. It occurs when the body either does not produce enough insulin, a hormone responsible for regulating blood sugar, 
-                or cannot effectively use the insulin it produces. The two main types of diabetes are Type 1, often diagnosed in children and young adults, and Type 2, which is more common and typically develops in adults. 
-                Type 2 diabetes is closely linked with lifestyle factors such as diet, exercise, and body weight. If left unmanaged, diabetes can lead to severe health complications, including heart disease, kidney failure, 
-                and vision loss. 
-                <br>
+                <p></br>Diabetes is a chronic medical condition that affects how the body processes sugar (World Health Organization, 2024). It occurs when the body either does not produce enough insulin, a hormone responsible for regulating blood sugar, or cannot effectively use the insulin it produces (World Health Organization, 2024). The two main types of diabetes are Type 1, often diagnosed in children and young adults, and Type 2, which is more common and typically develops in adults (CDC, 2024). Type 2 diabetes is closely linked with lifestyle factors such as diet, exercise, and body weight (Mayo Clinic, 2025.). If left unmanaged, diabetes can lead to severe health complications, including heart disease, kidney failure, and vision loss (Mayo Clinic, 2025.). <br>
                 </p>
-                <p></br>To better understand and analyze the onset of diabetes, researchers have utilized data-driven methods. Our Machine Learning class used a well-known dataset, the Pima Indians Diabetes dataset. 
-                The National Institute of Diabetes and Digestive and Kidney Diseases conducted research in Arizona and collected medical information from female patients of Pima Indian heritage aged 21 and older [2]. 
-                The dataset is commonly utilized in machine learning and statistical analysis to create models and visualizations that illustrate patterns within the diabetes data. The dataset comprises several vital metrics,
-                 including:
+                <p></br>To better understand and analyze the onset of diabetes, researchers have utilized data-driven methods. Our Machine Learning class used a well-known dataset, the Pima Indians Diabetes dataset. The National Institute of Diabetes and Digestive and Kidney Diseases conducted research in Arizona and collected medical information from female patients of Pima Indian heritage aged 21 and older (UCI Machine Learning Repository, 2016). The dataset is commonly utilized in machine learning and statistical analysis to create models and visualizations that illustrate patterns within the diabetes data. The dataset comprises several vital metrics, including:
                   <ul>
                     <li><strong></br>Pregnancies</strong> – Number of times the patient has been pregnant.</li>
                     <li><strong>Glucose</strong> – Plasma glucose concentration measured two hours after an oral glucose tolerance test.</li>
@@ -320,13 +313,13 @@ ul li{color:#34495e !important}
                     <li><strong>Skin Thickness</strong> – Triceps skinfold thickness (mm), which is a measure of body fat.</li>
                     <li><strong>Insulin</strong> – Serum insulin (μU/mL).</li>
                     <li><strong>BMI</strong> – Body mass index, calculated as weight in kilograms divided by the square of height in meters.</li>
-                    <li><strong>Diabetes Pedigree(DP) Function</strong> – A function that scores the likelihood of diabetes based on family history.</li>
+                    <li><strong>Diabetes Pedigree (DP) Function</strong> – A function that scores the likelihood of diabetes based on family history.</li>
                     <li><strong>Age</strong> – Age of the patient (years).</li>
                     <li><strong> Diabetes (Outcome)</strong> – A binary value: 0 indicates the patient is not diabetic, and 1 indicates the patient is diabetic.</li>
                   </ul>
                 </p>
 
-                <p></br>This dataset comprises approximately 768 entries, each corresponding to a single individual. The columns represent various medical indicators that may impact the likelihood of diabetes. In our Machine Learning class, we used the Pima dataset to explore several algorithms, including logistic regression, confusion matrix evaluation, K-means clustering, and Gaussian Mixture Models. Each model provided a visual representation of the dataset, helping better understand patterns, comparisons, classifications, and clustering within the data.
+                <p></br>This dataset comprises approximately 768 entries, each corresponding to a single individual (UCI Machine Learning Repository, 2016). The columns represent various medical indicators that may impact the likelihood of diabetes (UCI Machine Learning Repository, 2016). In our Machine Learning class, we used the Pima dataset to explore several algorithms, including logistic regression, confusion matrix evaluation, K-means clustering, and Gaussian Mixture Models. Each model provided a visual representation of the dataset, helping better understand patterns, comparisons, classifications, and clustering within the data.
                 </p>
             </section>
 
@@ -392,62 +385,62 @@ ul li{color:#34495e !important}
 
                 <h3></br>Logistic Regression</h3>
                 <p>
-                Logistic regression is a fundamental linear classification algorithm that estimates the probability of a binary outcome based on the logistic function.
-                It models the relationship between a set of input features and the log-odds of the target variable
-                (<a href="https://statquest.org/video-index/" target="_blank">StatQuest, 2025</a>).
-                In this study, logistic regression served as a baseline model for comparison against more complex algorithms.
+                Logistic regression is a fundamental linear classification algorithm that estimates the probability of a binary outcome based on the logistic function. 
+                It models the relationship between a set of input features and the log-odds of the target variable  
+                (<a href="https://statquest.org/video-index/" target="_blank">StatQuest, 2025</a>). 
+                In this study, logistic regression served as a baseline model for comparison against more complex algorithms. 
                 This model was implemented using Scikit-learn’s LogisticRegression module, and its performance was evaluated using accuracy and confusion matrices.
                 </p>
 
                 <h3></br>K-Means Clustering</h3>
                  <p>
-                  K-Means is an unsupervised clustering algorithm that partitions data into k distinct groups by minimizing the variance within each cluster
-                  (<a href="https://www.datacamp.com/tutorial/k-means-clustering-python" target="_blank">Babitz, 2018</a>).
-                  We employed K-Means to explore natural groupings in the dataset based on clinical features.
-                  These groupings were then examined to determine whether they aligned with diabetes diagnoses.
+                  K-Means is an unsupervised clustering algorithm that partitions data into k distinct groups by minimizing the variance within each cluster 
+                  (<a href="https://www.datacamp.com/tutorial/k-means-clustering-python" target="_blank">Babitz, 2018</a>). 
+                  We employed K-Means to explore natural groupings in the dataset based on clinical features. 
+                  These groupings were then examined to determine whether they aligned with diabetes diagnoses. 
                   The clustering was performed using Scikit-learn’s KMeans module.
                 </p>
 
                 <h3></br>Principal Component Analysis (PCA) followed by K-Means</br></h3>
                 <p>
-                To enhance clustering performance and aid visualization, we applied Principal Component Analysis (PCA) before performing K-Means clustering.
-                PCA reduces high-dimensional data to a smaller number of components that capture the most variance, which can help highlight meaningful structure
-                (<a href="https://statquest.org/video-index/" target="_blank">StatQuest, 2025</a>).
-                Using Scikit-learn’s PCA module, we projected the data into two dimensions and then applied K-Means clustering.
+                To enhance clustering performance and aid visualization, we applied Principal Component Analysis (PCA) before performing K-Means clustering. 
+                PCA reduces high-dimensional data to a smaller number of components that capture the most variance, which can help highlight meaningful structure 
+                (<a href="https://statquest.org/video-index/" target="_blank">StatQuest, 2025</a>). 
+                Using Scikit-learn’s PCA module, we projected the data into two dimensions and then applied K-Means clustering. 
                 This combination resulted in improved clustering performance (accuracy: 0.74) compared to K-Means alone.
                 </p>
 
                 <h3></br>Isomap followed by K-Means</h3>
                  <p>
-                    Isomap is a nonlinear dimensionality reduction method that preserves geodesic distances, making it effective for data lying on a curved manifold
-                    (<a href="https://statquest.org/video-index/" target="_blank">StatQuest, 2025</a>).
-                    To capture complex nonlinear patterns in the dataset, we used Isomap from Scikit-learn before applying K-Means clustering.
-                    This approach allowed the clustering algorithm to operate on a transformed space that better reflected the data’s intrinsic geometry,
+                    Isomap is a nonlinear dimensionality reduction method that preserves geodesic distances, making it effective for data lying on a curved manifold 
+                    (<a href="https://statquest.org/video-index/" target="_blank">StatQuest, 2025</a>). 
+                    To capture complex nonlinear patterns in the dataset, we used Isomap from Scikit-learn before applying K-Means clustering. 
+                    This approach allowed the clustering algorithm to operate on a transformed space that better reflected the data’s intrinsic geometry, 
                     offering valuable insights into the nonlinear structure of the data.
                 </p>
 
                 <h3></br>Gaussian Naive Bayes</h3>
                   <p>
-                  Gaussian Naive Bayes is a probabilistic classifier based on Bayes’ theorem, which assumes that the features are normally distributed and independent given the class label
-                  (<a href="https://builtin.com/artificial-intelligence/gaussian-naive-bayes" target="_blank">Martins, 2023</a>).
-                  It is a simple yet efficient model well-suited for baseline comparisons.
+                  Gaussian Naive Bayes is a probabilistic classifier based on Bayes’ theorem, which assumes that the features are normally distributed and independent given the class label 
+                  (<a href="https://builtin.com/artificial-intelligence/gaussian-naive-bayes" target="_blank">Martins, 2023</a>). 
+                  It is a simple yet efficient model well-suited for baseline comparisons. 
                   This classifier was implemented using Scikit-learn’s GaussianNB, and its performance was evaluated using standard classification metrics.
                  </p>
 
                 <h3></br>Shallow and Deep Perceptrons</h3>
                 <p>
-                To model complex nonlinear relationships, we utilized neural networks in the form of shallow and deep perceptrons.
-                A shallow perceptron includes a single hidden layer, whereas deep perceptrons contain multiple hidden layers, allowing for deeper representation learning
-                (<a href="https://statquest.org/video-index/" target="_blank">StatQuest, 2025</a>).
-                These models were built using Keras' Sequential API, with layers defined using Dense components.
-                We hypothesized that deeper architectures could uncover more subtle patterns in the data, and our results supported this,
+                To model complex nonlinear relationships, we utilized neural networks in the form of shallow and deep perceptrons. 
+                A shallow perceptron includes a single hidden layer, whereas deep perceptrons contain multiple hidden layers, allowing for deeper representation learning 
+                (<a href="https://statquest.org/video-index/" target="_blank">StatQuest, 2025</a>). 
+                These models were built using Keras' Sequential API, with layers defined using Dense components. 
+                We hypothesized that deeper architectures could uncover more subtle patterns in the data, and our results supported this, 
                 with deep perceptrons outperforming shallow ones in classification accuracy.
                 </p>
                 <h3></br>Model Comparison</h3>
                 <p>
-                To compare the effectiveness of each approach, we computed the accuracy scores for all models.
-                Logistic regression, Gaussian Naive Bayes, shallow and deep neural networks, and the K-Means clustering results
-                (with and without dimensionality reduction) were assessed side-by-side.
+                To compare the effectiveness of each approach, we computed the accuracy scores for all models. 
+                Logistic regression, Gaussian Naive Bayes, shallow and deep neural networks, and the K-Means clustering results 
+                (with and without dimensionality reduction) were assessed side-by-side. 
                 This comparative analysis highlighted the strengths and limitations of linear, nonlinear, and deep learning models in predicting diabetes onset.
                 </p>
             </section>
@@ -604,18 +597,6 @@ ul li{color:#34495e !important}
 
                 <!-- K-Means Clustering Results -->
                 <h3 id="kmeans_clustering_results"></br>Comparision of K-Means Clustering Results</h3>
-                <p style="font-weight: bold; font-size: 18px;">K-Means cluster scatterplot</p>
-                <p> The scatterplot illustrates the results of k-means clustering applied to the Pima Indians Diabetes dataset, where individuals are grouped into two clusters: 'sick' (likely diabetic) and 'healthy' (non-diabetic). Each point represents a patient, plotted based on key health indicators such as glucose level and BMI. </p>
-                <p> K-means is an unsupervised machine learning algorithm used to automatically group data into k distinct clusters based on feature similarity. It works by iteratively assigning points to the nearest cluster center (centroid) and updating these centroids to minimize within-cluster variance. Here, k-means helps identify natural groupings in the health data, potentially revealing patterns associated with diabetes without using prior labels. The plotted clusters and their centroids highlight how the algorithm has separated individuals into 'sick' and 'healthy' groups based on their physiological profiles. </p>
-                <div class="image-container-8">
-                    <figure class="figure">
-                        <img src="https://raw.githubusercontent.com/PhyloGrok/DiabetesML/main/plot_image/Kmeans_withoutPCA.png" alt="PCA cumulative">
-                        <figcaption>K-Mean Cluster Scatterplot</figcaption>
-                    </figure>
-                </div>
-                <br>
-
-
                 <p style="font-weight: bold; font-size: 18px;">Cumulative Plots (PCA and Isomap)</p>
                 <p>The results are presented through two cumulative variance plots: one for PCA and one for Isomap, applied to the PIMA Indians Diabetes dataset. The PCA plot illustrates the explained variance ratios, showing the cumulative proportion of variance captured by the principal components as the dataset is reduced in dimensionality. In contrast, the Isomap plot approximates cumulative variance using reconstruction error, since Isomap does not directly provide explained variance ratios. These plots help compare the effectiveness of each dimensionality reduction technique in capturing the underlying structure of the dataset. While PCA provides a clear and quantifiable measure of variance, Isomap offers an alternative perspective by evaluating how well the data can be reconstructed after dimensionality reduction, highlighting differences in how each method preserves the intrinsic characteristics of the diabetes data.</p>
                 <div class="image-container-2">
@@ -672,7 +653,7 @@ ul li{color:#34495e !important}
 
 
                 <!-- Gaussian Naive Bayes -->
-                <h3 id="gaussian_naive_bayes_results"> Gaussian Naive Bayes Results</h3>
+                <h3 id="gaussian_naive_bayes_results">Gaussian Naive Bayes Results</h3>
                 <p>The Gaussian Naive Bayes (GNB) confusion matrix for the PIMA Diabetes dataset serves as a crucial tool for evaluating the model's classification performance. It displays the counts of true positives, true negatives, false positives, and false negatives, providing insights into how well the model distinguishes between diabetic and non-diabetic individuals.</p>
                 <div class = "image-container-6">
                     <figure class="figure">
@@ -829,25 +810,6 @@ ul li{color:#34495e !important}
                         height: auto;
                         display: block;
                     }
-                    .image-container-8 {
-                        display: flex;
-                        flex-wrap: wrap;
-                        gap: 10px;
-                        width: 100%;
-                        justify-content: flex-start; /* Aligns items to the left */
-                        align-items: stretch;
-                    }
-                    .image-container-8 .figure {
-                        flex: 1 1 calc(50% - 10px); /* Adjust to keep images side by side */
-                        max-width: calc(50% - 10px);
-                        text-align: center;
-                    }
-
-                    .image-container-8 img {
-                        max-width: 600px;
-                        height: auto;
-                        display: block;
-                    }
 
                      .figure {
                         max-width: 600px;
@@ -896,7 +858,7 @@ ul li{color:#34495e !important}
             <section id="acknowledgements">
                 <h2 class="text-2xl font-bold text-gray-800 mb-4">Acknowledgements</h2>
                     <p>
-                      UMBC Translational Life Science Technology (TLST) student interns Nhi Luu, Aimee Icaza, Ketsia Pierrelus, and Li lan Fang are supported by Merck Data Science Fellowship for Observational Research Program and the UMBC College of Natural and Mathematical Sciences. As well as BTEC423 course for their support and resources. Nhi Luu developed refrence scripts to be edited.
+                        We would like to acknowledge the Merck data science fellowship, UMBC CNMS, and BTEC423 course for their support and resources.
                     </p>
             </section>
 
@@ -905,7 +867,7 @@ ul li{color:#34495e !important}
             <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
 
                 <div id="ref-abadi2016tensorflow" class="csl-entry mb-3" role="listitem">
-                    Abadi, M., et al. (2016). <em>TensorFlow: Large-scale machine learning on heterogeneous systems</em>. Retrieved from
+                    Abadi, M., et al. (2016). <em>TensorFlow: Large-scale machine learning on heterogeneous systems</em>. Retrieved from 
                     <a href="https://www.tensorflow.org/" target="_blank">https://www.tensorflow.org/</a>
                 </div>
 
