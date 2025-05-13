@@ -597,6 +597,18 @@ ul li{color:#34495e !important}
 
                 <!-- K-Means Clustering Results -->
                 <h3 id="kmeans_clustering_results"></br>Comparision of K-Means Clustering Results</h3>
+                <p style="font-weight: bold; font-size: 18px;">K-Means cluster scatterplot</p>
+                <p> The scatterplot illustrates the results of k-means clustering applied to the Pima Indians Diabetes dataset, where individuals are grouped into two clusters: 'sick' (likely diabetic) and 'healthy' (non-diabetic). Each point represents a patient, plotted based on key health indicators such as glucose level and BMI. </p>
+                <p> K-means is an unsupervised machine learning algorithm used to automatically group data into k distinct clusters based on feature similarity. It works by iteratively assigning points to the nearest cluster center (centroid) and updating these centroids to minimize within-cluster variance. Here, k-means helps identify natural groupings in the health data, potentially revealing patterns associated with diabetes without using prior labels. The plotted clusters and their centroids highlight how the algorithm has separated individuals into 'sick' and 'healthy' groups based on their physiological profiles. </p>
+                <div class="image-container-8">
+                    <figure class="figure">
+                        <img src="https://raw.githubusercontent.com/PhyloGrok/DiabetesML/main/plot_image/Kmeans_withoutPCA.png" alt="PCA cumulative">
+                        <figcaption>K-Mean Cluster Scatterplot</figcaption>
+                    </figure>
+                </div>
+                <br>
+
+
                 <p style="font-weight: bold; font-size: 18px;">Cumulative Plots (PCA and Isomap)</p>
                 <p>The results are presented through two cumulative variance plots: one for PCA and one for Isomap, applied to the PIMA Indians Diabetes dataset. The PCA plot illustrates the explained variance ratios, showing the cumulative proportion of variance captured by the principal components as the dataset is reduced in dimensionality. In contrast, the Isomap plot approximates cumulative variance using reconstruction error, since Isomap does not directly provide explained variance ratios. These plots help compare the effectiveness of each dimensionality reduction technique in capturing the underlying structure of the dataset. While PCA provides a clear and quantifiable measure of variance, Isomap offers an alternative perspective by evaluating how well the data can be reconstructed after dimensionality reduction, highlighting differences in how each method preserves the intrinsic characteristics of the diabetes data.</p>
                 <div class="image-container-2">
@@ -653,7 +665,7 @@ ul li{color:#34495e !important}
 
 
                 <!-- Gaussian Naive Bayes -->
-                <h3 id="gaussian_naive_bayes_results">Gaussian Naive Bayes Results</h3>
+                <h3 id="gaussian_naive_bayes_results"> Gaussian Naive Bayes Results</h3>
                 <p>The Gaussian Naive Bayes (GNB) confusion matrix for the PIMA Diabetes dataset serves as a crucial tool for evaluating the model's classification performance. It displays the counts of true positives, true negatives, false positives, and false negatives, providing insights into how well the model distinguishes between diabetic and non-diabetic individuals.</p>
                 <div class = "image-container-6">
                     <figure class="figure">
@@ -806,6 +818,25 @@ ul li{color:#34495e !important}
                     }
 
                     .image-container-7 img {
+                        max-width: 600px;
+                        height: auto;
+                        display: block;
+                    }
+                    .image-container-8 {
+                        display: flex;
+                        flex-wrap: wrap;
+                        gap: 10px;
+                        width: 100%;
+                        justify-content: flex-start; /* Aligns items to the left */
+                        align-items: stretch;
+                    }
+                    .image-container-8 .figure {
+                        flex: 1 1 calc(50% - 10px); /* Adjust to keep images side by side */
+                        max-width: calc(50% - 10px);
+                        text-align: center;
+                    }
+
+                    .image-container-8 img {
                         max-width: 600px;
                         height: auto;
                         display: block;
