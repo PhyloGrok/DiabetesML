@@ -1,3 +1,4 @@
+%%html
 
 <!DOCTYPE html>
 <html lang="en">
@@ -385,62 +386,62 @@ ul li{color:#34495e !important}
 
                 <h3></br>Logistic Regression</h3>
                 <p>
-                Logistic regression is a fundamental linear classification algorithm that estimates the probability of a binary outcome based on the logistic function. 
-                It models the relationship between a set of input features and the log-odds of the target variable  
-                (<a href="https://statquest.org/video-index/" target="_blank">StatQuest, 2025</a>). 
-                In this study, logistic regression served as a baseline model for comparison against more complex algorithms. 
+                Logistic regression is a fundamental linear classification algorithm that estimates the probability of a binary outcome based on the logistic function.
+                It models the relationship between a set of input features and the log-odds of the target variable
+                (<a href="https://statquest.org/video-index/" target="_blank">StatQuest, 2025</a>).
+                In this study, logistic regression served as a baseline model for comparison against more complex algorithms.
                 This model was implemented using Scikit-learn’s LogisticRegression module, and its performance was evaluated using accuracy and confusion matrices.
                 </p>
 
                 <h3></br>K-Means Clustering</h3>
                  <p>
-                  K-Means is an unsupervised clustering algorithm that partitions data into k distinct groups by minimizing the variance within each cluster 
-                  (<a href="https://www.datacamp.com/tutorial/k-means-clustering-python" target="_blank">Babitz, 2018</a>). 
-                  We employed K-Means to explore natural groupings in the dataset based on clinical features. 
-                  These groupings were then examined to determine whether they aligned with diabetes diagnoses. 
+                  K-Means is an unsupervised clustering algorithm that partitions data into k distinct groups by minimizing the variance within each cluster
+                  (<a href="https://www.datacamp.com/tutorial/k-means-clustering-python" target="_blank">Babitz, 2018</a>).
+                  We employed K-Means to explore natural groupings in the dataset based on clinical features.
+                  These groupings were then examined to determine whether they aligned with diabetes diagnoses.
                   The clustering was performed using Scikit-learn’s KMeans module.
                 </p>
 
                 <h3></br>Principal Component Analysis (PCA) followed by K-Means</br></h3>
                 <p>
-                To enhance clustering performance and aid visualization, we applied Principal Component Analysis (PCA) before performing K-Means clustering. 
-                PCA reduces high-dimensional data to a smaller number of components that capture the most variance, which can help highlight meaningful structure 
-                (<a href="https://statquest.org/video-index/" target="_blank">StatQuest, 2025</a>). 
-                Using Scikit-learn’s PCA module, we projected the data into two dimensions and then applied K-Means clustering. 
+                To enhance clustering performance and aid visualization, we applied Principal Component Analysis (PCA) before performing K-Means clustering.
+                PCA reduces high-dimensional data to a smaller number of components that capture the most variance, which can help highlight meaningful structure
+                (<a href="https://statquest.org/video-index/" target="_blank">StatQuest, 2025</a>).
+                Using Scikit-learn’s PCA module, we projected the data into two dimensions and then applied K-Means clustering.
                 This combination resulted in improved clustering performance (accuracy: 0.74) compared to K-Means alone.
                 </p>
 
                 <h3></br>Isomap followed by K-Means</h3>
                  <p>
-                    Isomap is a nonlinear dimensionality reduction method that preserves geodesic distances, making it effective for data lying on a curved manifold 
-                    (<a href="https://statquest.org/video-index/" target="_blank">StatQuest, 2025</a>). 
-                    To capture complex nonlinear patterns in the dataset, we used Isomap from Scikit-learn before applying K-Means clustering. 
-                    This approach allowed the clustering algorithm to operate on a transformed space that better reflected the data’s intrinsic geometry, 
+                    Isomap is a nonlinear dimensionality reduction method that preserves geodesic distances, making it effective for data lying on a curved manifold
+                    (<a href="https://statquest.org/video-index/" target="_blank">StatQuest, 2025</a>).
+                    To capture complex nonlinear patterns in the dataset, we used Isomap from Scikit-learn before applying K-Means clustering.
+                    This approach allowed the clustering algorithm to operate on a transformed space that better reflected the data’s intrinsic geometry,
                     offering valuable insights into the nonlinear structure of the data.
                 </p>
 
                 <h3></br>Gaussian Naive Bayes</h3>
                   <p>
-                  Gaussian Naive Bayes is a probabilistic classifier based on Bayes’ theorem, which assumes that the features are normally distributed and independent given the class label 
-                  (<a href="https://builtin.com/artificial-intelligence/gaussian-naive-bayes" target="_blank">Martins, 2023</a>). 
-                  It is a simple yet efficient model well-suited for baseline comparisons. 
+                  Gaussian Naive Bayes is a probabilistic classifier based on Bayes’ theorem, which assumes that the features are normally distributed and independent given the class label
+                  (<a href="https://builtin.com/artificial-intelligence/gaussian-naive-bayes" target="_blank">Martins, 2023</a>).
+                  It is a simple yet efficient model well-suited for baseline comparisons.
                   This classifier was implemented using Scikit-learn’s GaussianNB, and its performance was evaluated using standard classification metrics.
                  </p>
 
                 <h3></br>Shallow and Deep Perceptrons</h3>
                 <p>
-                To model complex nonlinear relationships, we utilized neural networks in the form of shallow and deep perceptrons. 
-                A shallow perceptron includes a single hidden layer, whereas deep perceptrons contain multiple hidden layers, allowing for deeper representation learning 
-                (<a href="https://statquest.org/video-index/" target="_blank">StatQuest, 2025</a>). 
-                These models were built using Keras' Sequential API, with layers defined using Dense components. 
-                We hypothesized that deeper architectures could uncover more subtle patterns in the data, and our results supported this, 
+                To model complex nonlinear relationships, we utilized neural networks in the form of shallow and deep perceptrons.
+                A shallow perceptron includes a single hidden layer, whereas deep perceptrons contain multiple hidden layers, allowing for deeper representation learning
+                (<a href="https://statquest.org/video-index/" target="_blank">StatQuest, 2025</a>).
+                These models were built using Keras' Sequential API, with layers defined using Dense components.
+                We hypothesized that deeper architectures could uncover more subtle patterns in the data, and our results supported this,
                 with deep perceptrons outperforming shallow ones in classification accuracy.
                 </p>
                 <h3></br>Model Comparison</h3>
                 <p>
-                To compare the effectiveness of each approach, we computed the accuracy scores for all models. 
-                Logistic regression, Gaussian Naive Bayes, shallow and deep neural networks, and the K-Means clustering results 
-                (with and without dimensionality reduction) were assessed side-by-side. 
+                To compare the effectiveness of each approach, we computed the accuracy scores for all models.
+                Logistic regression, Gaussian Naive Bayes, shallow and deep neural networks, and the K-Means clustering results
+                (with and without dimensionality reduction) were assessed side-by-side.
                 This comparative analysis highlighted the strengths and limitations of linear, nonlinear, and deep learning models in predicting diabetes onset.
                 </p>
             </section>
@@ -889,7 +890,7 @@ ul li{color:#34495e !important}
             <section id="acknowledgements">
                 <h2 class="text-2xl font-bold text-gray-800 mb-4">Acknowledgements</h2>
                     <p>
-                        We would like to acknowledge the Merck data science fellowship, UMBC CNMS, and BTEC423 course for their support and resources.
+                      UMBC Translational Life Science Technology (TLST) student interns Nhi Luu, Aimee Icaza, and Ketsia Pierrelus are supported by Merck Data Science Fellowship for Observational Research Program and the UMBC College of Natural and Mathematical Sciences. As well as BTEC423 course for their support and resources. Nhi Luu developed refrence scripts to be edited.
                     </p>
             </section>
 
@@ -898,7 +899,7 @@ ul li{color:#34495e !important}
             <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
 
                 <div id="ref-abadi2016tensorflow" class="csl-entry mb-3" role="listitem">
-                    Abadi, M., et al. (2016). <em>TensorFlow: Large-scale machine learning on heterogeneous systems</em>. Retrieved from 
+                    Abadi, M., et al. (2016). <em>TensorFlow: Large-scale machine learning on heterogeneous systems</em>. Retrieved from
                     <a href="https://www.tensorflow.org/" target="_blank">https://www.tensorflow.org/</a>
                 </div>
 
