@@ -872,22 +872,22 @@ ul li{color:#34495e !important}
                 <p>
                     This study evaluates the performance of various machine learning models in predicting diabetes among Pima Indian women, aiming to identify the most effective model for this classification task.
                 </p>
-                <p>
+                <p></br>
                     The Logistic Regression model, a linear classifier, demonstrated a reasonable level of accuracy, suggesting that the Pima dataset may exhibit linear separability between the diabetic and non-diabetic classes. Given its satisfactory performance, it can be inferred that the underlying structure of the data aligns well with the assumptions of linear classification.
                 </p>
-                <p>
+                <p></br>
                     The K-Means clustering algorithm, an unsupervised method, performed well in classifying the data. This result suggests that the inherent grouping of diabetes outcomes (sick/healthy) is consistent with the binary nature of the target variable, implying that clustering can effectively capture the data's underlying structure.
                 </p>
-                <p>
+                <p></br>
                     Dimensionality reduction techniques such as PCA and Isomap, when followed by K-Means clustering, did not result in a significant improvement in classification performance. In fact, the accuracy dropped following Isomap-based reduction, indicating that non-linear dimensionality reduction failed to enhance K-Means' ability to separate the classes. This finding is further corroborated by the confusion matrices, where PCA outperformed Isomap, showing better true positive and true negative classifications.
                 </p>
-                <p>
+                <p></br>
                     The Gaussian Naive Bayes model, while simple and computationally efficient, assumes feature independence and normality, which may be reasonably applicable to this dataset. Its higher accuracy compared to K-Means suggests that these assumptions hold to some degree for the given features, allowing it to achieve a better classification performance.
                 </p>
-                <p>
+                <p></br>
                     Both shallow and deep perceptron models, which are neural network-based approaches, demonstrated the capacity to capture complex patterns in the data. The deep perceptron, with its multiple layers, was expected to outperform the shallow perceptron by learning more intricate relationships between features. Although the accuracy scores were not reported, the combined ROC curves and AUC scores strongly indicate that the deep perceptron outperforms the shallow perceptron in predicting diabetes, highlighting the advantage of deeper architectures in modeling more complex feature interactions.
                 </p>
-                <p>
+                <p></br>
                     Future work could explore more advanced neural network architectures, hyperparameter tuning, and feature engineering techniques to further enhance predictive performance. Additionally, the application of ensemble methods, which integrate multiple models to improve robustness, warrants further investigation.
                 </p>
 
