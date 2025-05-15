@@ -300,7 +300,7 @@ ul li{color:#34495e !important}
             <div class="md:col-span-2">
                <h1 class="text-2xl font-bold text-black-1000 mb-4">Comparing the Machine Learning Models using Pima Indian Diabetes Dataset</h1>
                 <p><strong>Authors:</strong>Li Lan Fang, Aimee Icaza, Ketsia Pierrelus</p>
-                <p><strong>Publication Date:</strong> May TBD, 2025</p>
+                <p><strong>Publication Date:</strong> May 15, 2025</p>
                 <section class="mb-8">
                 <h2 class="text-2xl font-bold text-gray-800 mb-4" id = "introduction"></br>Introduction to the PIMA Indian Datset</h2>
                 <p></br>Diabetes is a chronic medical condition that affects how the body processes sugar (World Health Organization, 2024). It occurs when the body either does not produce enough insulin, a hormone responsible for regulating blood sugar, or cannot effectively use the insulin it produces (World Health Organization, 2024). The two main types of diabetes are Type 1, often diagnosed in children and young adults, and Type 2, which is more common and typically develops in adults (CDC, 2024). Type 2 diabetes is closely linked with lifestyle factors such as diet, exercise, and body weight (Mayo Clinic, 2025.). If left unmanaged, diabetes can lead to severe health complications, including heart disease, kidney failure, and vision loss (Mayo Clinic, 2025.). <br>
@@ -387,7 +387,7 @@ ul li{color:#34495e !important}
                 <p>
                 Logistic regression is a fundamental linear classification algorithm that estimates the probability of a binary outcome based on the logistic function. 
                 It models the relationship between a set of input features and the log-odds of the target variable  
-                (<a href="https://statquest.org/video-index/" target="_blank">StatQuest, 2025</a>). 
+                (<a href="https://www.geeksforgeeks.org/understanding-logistic-regression/" target="_blank">GeeksforGeeks, 2025</a>). 
                 In this study, logistic regression served as a baseline model for comparison against more complex algorithms. 
                 This model was implemented using Scikit-learn’s LogisticRegression module, and its performance was evaluated using accuracy and confusion matrices.
                 </p>
@@ -405,7 +405,7 @@ ul li{color:#34495e !important}
                 <p>
                 To enhance clustering performance and aid visualization, we applied Principal Component Analysis (PCA) before performing K-Means clustering. 
                 PCA reduces high-dimensional data to a smaller number of components that capture the most variance, which can help highlight meaningful structure 
-                (<a href="https://statquest.org/video-index/" target="_blank">StatQuest, 2025</a>). 
+                (<a href="https://jakevdp.github.io/PythonDataScienceHandbook/05.11-k-means.html" target="_blank">VanderPlas, 2022, Chapeter 5</a>). 
                 Using Scikit-learn’s PCA module, we projected the data into two dimensions and then applied K-Means clustering. 
                 This combination resulted in improved clustering performance (accuracy: 0.74) compared to K-Means alone.
                 </p>
@@ -413,7 +413,7 @@ ul li{color:#34495e !important}
                 <h3></br>Isomap followed by K-Means</h3>
                  <p>
                     Isomap is a nonlinear dimensionality reduction method that preserves geodesic distances, making it effective for data lying on a curved manifold 
-                    (<a href="https://statquest.org/video-index/" target="_blank">StatQuest, 2025</a>). 
+                    (<a href="https://www.geeksforgeeks.org/isomap-a-non-linear-dimensionality-reduction-technique/" target="_blank">GeeksforGeeks, 2025</a>). 
                     To capture complex nonlinear patterns in the dataset, we used Isomap from Scikit-learn before applying K-Means clustering. 
                     This approach allowed the clustering algorithm to operate on a transformed space that better reflected the data’s intrinsic geometry, 
                     offering valuable insights into the nonlinear structure of the data.
@@ -431,7 +431,7 @@ ul li{color:#34495e !important}
                 <p>
                 To model complex nonlinear relationships, we utilized neural networks in the form of shallow and deep perceptrons. 
                 A shallow perceptron includes a single hidden layer, whereas deep perceptrons contain multiple hidden layers, allowing for deeper representation learning 
-                (<a href="https://statquest.org/video-index/" target="_blank">StatQuest, 2025</a>). 
+                (<a href="https://faroit.com/keras-docs/1.0.1/getting-started/sequential-model-guide/" target="_blank">Keras Doc, 2025</a>). 
                 These models were built using Keras' Sequential API, with layers defined using Dense components. 
                 We hypothesized that deeper architectures could uncover more subtle patterns in the data, and our results supported this, 
                 with deep perceptrons outperforming shallow ones in classification accuracy.
@@ -964,6 +964,24 @@ ul li{color:#34495e !important}
                     Harris, C. R., et al. (2020). <em><a href="https://www.nature.com/articles/s41586-020-2649-2" target="_blank">
                     Array computing with NumPy</a></em>. <em>Nature, 585</em>(7825), 357–362.
                 </div>
+
+                 <div id="ref-geeksforgeeks2025isomap" class="csl-entry mb-3" role="listitem">
+                    GeeksforGeeks. (2025a, February 10). <em>Isomap: A non-linear dimensionality reduction technique</em>. 
+                    <a href="https://www.geeksforgeeks.org/isomap-a-non-linear-dimensionality-reduction-technique/" target="_blank">
+                    https://www.geeksforgeeks.org/isomap-a-non-linear-dimensionality-reduction-technique/</a>
+                </div>
+
+                <div id="ref-geeksforgeeks2025logistic" class="csl-entry mb-3" role="listitem">
+                    GeeksforGeeks. (2025, February 3). <em>Logistic regression in machine learning</em>. 
+                    <a href="https://www.geeksforgeeks.org/understanding-logistic-regression/" target="_blank">
+                    https://www.geeksforgeeks.org/understanding-logistic-regression/</a>
+                </div>
+
+                 <div id="ref-keras2025sequential" class="csl-entry mb-3" role="listitem">
+                    Guide to the Sequential model - Keras Documentation. (2025). <em>Keras Documentation</em>. 
+                    <a href="https://faroit.com/keras-docs/1.0.1/getting-started/sequential-model-guide/" target="_blank">
+                    https://faroit.com/keras-docs/1.0.1/getting-started/sequential-model-guide/</a>
+                </div>
                 
                 <div id="ref-hunter2007matplotlib" class="csl-entry mb-3" role="listitem">
                     Hunter, J. D. (2007). <em><a href="https://ieeexplore.ieee.org/document/4160265" target="_blank">
@@ -972,7 +990,8 @@ ul li{color:#34495e !important}
                 
                 <div id="ref-martins2023naivebayes" class="csl-entry mb-3" role="listitem">
                     Martins, C. (2023). <em><a href="https://builtin.com/artificial-intelligence/gaussian-naive-bayes" target="_blank">
-                    Gaussian Naive Bayes Explained With Scikit-Learn</a></em>. Built In.
+                    Gaussian Naive Bayes Explained With Scikit-Learn</a></em>. <a href="https://builtin.com/artificial-intelligence/gaussian-naive-bayes" target="_blank">
+                   https://builtin.com/artificial-intelligence/gaussian-naive-bayes/a>
                 </div>
                 
                 <div id="ref-mayo2025type2" class="csl-entry mb-3" role="listitem">
@@ -1006,8 +1025,9 @@ ul li{color:#34495e !important}
                 </div>
                 
                 <div id="ref-statquest2025" class="csl-entry mb-3" role="listitem">
-                    StatQuest. (2025). <em><a href="https://statquest.org/video-index/" target="_blank">
-                    Video Index</a></em>. StatQuest.
+                    StatQuest. (2025). <em><a href="https://statquest.org/pca-clearly-explained/" target="_blank">
+                    PCA clearly explained</a></em>.<a href="https://statquest.org/pca-clearly-explained/" target="_blank">
+                    https://statquest.org/pca-clearly-explained/</a>
                 </div>
                 
                 <div id="ref-uci2016pima" class="csl-entry mb-3" role="listitem">
