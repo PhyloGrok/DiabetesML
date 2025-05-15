@@ -300,7 +300,7 @@ ul li{color:#34495e !important}
             <div class="md:col-span-2">
                <h1 class="text-2xl font-bold text-black-1000 mb-4">Comparing the Machine Learning Models using Pima Indian Diabetes Dataset</h1>
                 <p><strong>Authors:</strong>Li Lan Fang, Aimee Icaza, Ketsia Pierrelus</p>
-                <p><strong>Publication Date:</strong> May 15, 2025</p>
+                <p><strong>Publication Date:</strong> May TBD, 2025</p>
                 <section class="mb-8">
                 <h2 class="text-2xl font-bold text-gray-800 mb-4" id = "introduction"></br>Introduction to the PIMA Indian Datset</h2>
                 <p></br>Diabetes is a chronic medical condition that affects how the body processes sugar (World Health Organization, 2024). It occurs when the body either does not produce enough insulin, a hormone responsible for regulating blood sugar, or cannot effectively use the insulin it produces (World Health Organization, 2024). The two main types of diabetes are Type 1, often diagnosed in children and young adults, and Type 2, which is more common and typically develops in adults (CDC, 2024). Type 2 diabetes is closely linked with lifestyle factors such as diet, exercise, and body weight (Mayo Clinic, 2025.). If left unmanaged, diabetes can lead to severe health complications, including heart disease, kidney failure, and vision loss (Mayo Clinic, 2025.). <br>
@@ -385,64 +385,69 @@ ul li{color:#34495e !important}
 
                 <h3></br>Logistic Regression</h3>
                 <p>
-                Logistic regression is a fundamental linear classification algorithm that estimates the probability of a binary outcome based on the logistic function. 
-                It models the relationship between a set of input features and the log-odds of the target variable  
-                (<a href="https://www.geeksforgeeks.org/understanding-logistic-regression/" target="_blank">GeeksforGeeks, 2025</a>). 
-                In this study, logistic regression served as a baseline model for comparison against more complex algorithms. 
+                Logistic regression is a fundamental linear classification algorithm that estimates the probability of a binary outcome based on the logistic function.
+                It models the relationship between a set of input features and the log-odds of the target variable
+                (<a href="https://www.geeksforgeeks.org/understanding-logistic-regression/" target="_blank">GeeksforGeeks, 2025</a>).
+                In this study, logistic regression served as a baseline model for comparison against more complex algorithms.
                 This model was implemented using Scikit-learn’s LogisticRegression module, and its performance was evaluated using accuracy and confusion matrices.
                 </p>
 
                 <h3></br>K-Means Clustering</h3>
                  <p>
-                  K-Means is an unsupervised clustering algorithm that partitions data into k distinct groups by minimizing the variance within each cluster 
-                  (<a href="https://www.datacamp.com/tutorial/k-means-clustering-python" target="_blank">Babitz, 2018</a>). 
-                  We employed K-Means to explore natural groupings in the dataset based on clinical features. 
-                  These groupings were then examined to determine whether they aligned with diabetes diagnoses. 
+                  K-Means is an unsupervised clustering algorithm that partitions data into k distinct groups by minimizing the variance within each cluster
+                  (<a href="https://www.datacamp.com/tutorial/k-means-clustering-python" target="_blank">Babitz, 2018</a>).
+                  We employed K-Means to explore natural groupings in the dataset based on clinical features.
+                  These groupings were then examined to determine whether they aligned with diabetes diagnoses.
                   The clustering was performed using Scikit-learn’s KMeans module.
                 </p>
 
                 <h3></br>Principal Component Analysis (PCA) followed by K-Means</br></h3>
                 <p>
-                To enhance clustering performance and aid visualization, we applied Principal Component Analysis (PCA) before performing K-Means clustering. 
-                PCA reduces high-dimensional data to a smaller number of components that capture the most variance, which can help highlight meaningful structure 
-                (<a href="https://jakevdp.github.io/PythonDataScienceHandbook/05.11-k-means.html" target="_blank">VanderPlas, 2022, Chapeter 5</a>). 
-                Using Scikit-learn’s PCA module, we projected the data into two dimensions and then applied K-Means clustering. 
+                To enhance clustering performance and aid visualization, we applied Principal Component Analysis (PCA) before performing K-Means clustering.
+                PCA reduces high-dimensional data to a smaller number of components that capture the most variance, which can help highlight meaningful structure
+                (<a href="https://jakevdp.github.io/PythonDataScienceHandbook/05.11-k-means.html" target="_blank">VanderPlas, 2022, Chapeter 5</a>).
+                Using Scikit-learn’s PCA module, we projected the data into two dimensions and then applied K-Means clustering.
                 This combination resulted in improved clustering performance (accuracy: 0.74) compared to K-Means alone.
                 </p>
 
                 <h3></br>Isomap followed by K-Means</h3>
                  <p>
-                    Isomap is a nonlinear dimensionality reduction method that preserves geodesic distances, making it effective for data lying on a curved manifold 
-                    (<a href="https://www.geeksforgeeks.org/isomap-a-non-linear-dimensionality-reduction-technique/" target="_blank">GeeksforGeeks, 2025</a>). 
-                    To capture complex nonlinear patterns in the dataset, we used Isomap from Scikit-learn before applying K-Means clustering. 
-                    This approach allowed the clustering algorithm to operate on a transformed space that better reflected the data’s intrinsic geometry, 
+                    Isomap is a nonlinear dimensionality reduction method that preserves geodesic distances, making it effective for data lying on a curved manifold
+                    (<a href="https://www.geeksforgeeks.org/isomap-a-non-linear-dimensionality-reduction-technique/" target="_blank">GeeksforGeeks, 2025</a>).
+                    To capture complex nonlinear patterns in the dataset, we used Isomap from Scikit-learn before applying K-Means clustering.
+                    This approach allowed the clustering algorithm to operate on a transformed space that better reflected the data’s intrinsic geometry,
                     offering valuable insights into the nonlinear structure of the data.
                 </p>
 
                 <h3></br>Gaussian Naive Bayes</h3>
                   <p>
-                  Gaussian Naive Bayes is a probabilistic classifier based on Bayes’ theorem, which assumes that the features are normally distributed and independent given the class label 
-                  (<a href="https://builtin.com/artificial-intelligence/gaussian-naive-bayes" target="_blank">Martins, 2023</a>). 
-                  It is a simple yet efficient model well-suited for baseline comparisons. 
+                  Gaussian Naive Bayes is a probabilistic classifier based on Bayes’ theorem, which assumes that the features are normally distributed and independent given the class label
+                  (<a href="https://builtin.com/artificial-intelligence/gaussian-naive-bayes" target="_blank">Martins, 2023</a>).
+                  It is a simple yet efficient model well-suited for baseline comparisons.
                   This classifier was implemented using Scikit-learn’s GaussianNB, and its performance was evaluated using standard classification metrics.
                  </p>
 
                 <h3></br>Shallow and Deep Perceptrons</h3>
                 <p>
-                To model complex nonlinear relationships, we utilized neural networks in the form of shallow and deep perceptrons. 
-                A shallow perceptron includes a single hidden layer, whereas deep perceptrons contain multiple hidden layers, allowing for deeper representation learning 
-                (<a href="https://faroit.com/keras-docs/1.0.1/getting-started/sequential-model-guide/" target="_blank">Keras Doc, 2025</a>). 
-                These models were built using Keras' Sequential API, with layers defined using Dense components. 
-                We hypothesized that deeper architectures could uncover more subtle patterns in the data, and our results supported this, 
+                To model complex nonlinear relationships, we utilized neural networks in the form of shallow and deep perceptrons.
+                A shallow perceptron includes a single hidden layer, whereas deep perceptrons contain multiple hidden layers, allowing for deeper representation learning
+                (<a href="https://faroit.com/keras-docs/1.0.1/getting-started/sequential-model-guide/" target="_blank">Keras Doc, 2025</a>).
+                These models were built using Keras' Sequential API, with layers defined using Dense components.
+                We hypothesized that deeper architectures could uncover more subtle patterns in the data, and our results supported this,
                 with deep perceptrons outperforming shallow ones in classification accuracy.
                 </p>
                 <h3></br>Model Comparison</h3>
                 <p>
-                To compare the effectiveness of each approach, we computed the accuracy scores for all models. 
-                Logistic regression, Gaussian Naive Bayes, shallow and deep neural networks, and the K-Means clustering results 
-                (with and without dimensionality reduction) were assessed side-by-side. 
+                To compare the effectiveness of each approach, we computed the accuracy scores for all models.
+                Logistic regression, Gaussian Naive Bayes, shallow and deep neural networks, and the K-Means clustering results
+                (with and without dimensionality reduction) were assessed side-by-side.
                 This comparative analysis highlighted the strengths and limitations of linear, nonlinear, and deep learning models in predicting diabetes onset.
                 </p>
+                <h3 id="KAL_Code"></br>KAL Code</h3>
+                  <p>KAL for the three authors names: Ketsia, Aimee, Li Lan. Here is the code used for this investigation in Google Colab:</p>
+                  <p><a href="https://colab.research.google.com/drive/1050PLQQ5oYUePww5LyIiX8400TmTM1pH?usp=sharing" target="_blank">
+                  https://colab.research.google.com/drive/1050PLQQ5oYUePww5LyIiX8400TmTM1pH?usp=sharing</a></p>
+
             </section>
 
             <!-- Result -->
@@ -887,28 +892,28 @@ ul li{color:#34495e !important}
                 <p>Overall, logistic regression remains a competitive and interpretable model for this classification task, but deeper neural networks offer superior discriminative power. Future research should consider optimizing neural network architectures through hyperparameter tuning and feature engineering to further improve prediction accuracy. Additionally, the application of ensemble learning methods, such as bagging and boosting, may enhance model robustness and generalizability, and should be explored in subsequent studies.</p>
                 <br>
             </section>
-              <!-- Discussion End -->    
+              <!-- Discussion End -->
 
             <!-- Contributions -->
 
             <section id="contributions">
                 <h2 class="text-2xl font-bold text-gray-800 mb-4">Contributions</h2>
-                <p> Ketsia contributed to the development of the Cumulative Explained Variance graph using Principal Component Analysis (PCA), which visually represents how the dataset's total variance is captured as the number of principal components increases. 
+                <p> Ketsia contributed to the development of the Cumulative Explained Variance graph using Principal Component Analysis (PCA), which visually represents how the dataset's total variance is captured as the number of principal components increases.
                   This plot was essential for determining the optimal number of components needed for effective data representation while reducing dimensionality. In addition to her technical contributions, Ketsia was responsible for drafting the introduction, contributing to the citations section,
-                   proofreading for grammatical accuracy, and resolving formatting and spacing issues. She also uploaded the logos and images used in the website header. Ketsia further contributed to the Gaussian Naive Bayes confusion matrix section and collaborated with Aimee on the Isomap dimensionality 
-                   reduction and K-means clustering plot. During the analysis, Ketsia identified a discrepancy in the class labels of the confusion matrix, where the “healthy” and “sick” labels were reversed, and after reviewing the code, successfully corrected this issue. Furthermore, she developed the 
-                   PCA Variance Ratio Plot by adapting an example from our data science textbook to match the dataset, aiding in the selection of principal components for dimensionality reduction.    
+                   proofreading for grammatical accuracy, and resolving formatting and spacing issues. She also uploaded the logos and images used in the website header. Ketsia further contributed to the Gaussian Naive Bayes confusion matrix section and collaborated with Aimee on the Isomap dimensionality
+                   reduction and K-means clustering plot. During the analysis, Ketsia identified a discrepancy in the class labels of the confusion matrix, where the “healthy” and “sick” labels were reversed, and after reviewing the code, successfully corrected this issue. Furthermore, she developed the
+                   PCA Variance Ratio Plot by adapting an example from our data science textbook to match the dataset, aiding in the selection of principal components for dimensionality reduction.
                 </p>
                 <br>
-                <p> 
-                Li Lan was responsible for the development and implementation of several critical components of the project. She integrated the PNG export functionality across the entire codebase, enhancing the clarity of graphical outputs and removing distractions from the terminal interface. Li Lan 
-                also developed the PCA plot, the PCA-based K-Means clustering plot, and the confusion matrix following the application of PCA and K-Means clustering. Despite encountering initial challenges with flipping the values in the confusion matrix, Li Lan resolved the issue through online 
+                <p>
+                Li Lan was responsible for the development and implementation of several critical components of the project. She integrated the PNG export functionality across the entire codebase, enhancing the clarity of graphical outputs and removing distractions from the terminal interface. Li Lan
+                also developed the PCA plot, the PCA-based K-Means clustering plot, and the confusion matrix following the application of PCA and K-Means clustering. Despite encountering initial challenges with flipping the values in the confusion matrix, Li Lan resolved the issue through online
                 resources and successfully corrected the output. Additionally, Li Lan coded the confusion matrix and ROC curves for the Logistic Regression model. Utilizing tools like Copilot, she also created the Cumulative Reconstruction Error plot for Isomap. Li Lan contributed significantly to the
                  creation of the combined ROC curve plot to assess the performance of all algorithm models, and was responsible for coding the ROC curve plot comparing Shallow and Deep Perceptrons. Finally, she was tasked with coding and developing the Results and Discussion sections for the project's website.
                 </p>
                 <br>
                 <p>
-                  Aimee Icaza contributed significantly to the project through various technical, editorial, and organizational roles. She created the Isomap 2-component plot and performed Isomap dimensionality reduction, in addition to generating the K-means clustering plot. She also developed the initial code 
+                  Aimee Icaza contributed significantly to the project through various technical, editorial, and organizational roles. She created the Isomap 2-component plot and performed Isomap dimensionality reduction, in addition to generating the K-means clustering plot. She also developed the initial code
                   for the confusion matrix and, with assistance from Ketsia, adjusted the matrix values to achieve an accuracy score of 72%. Aimee played a key role in project organization by establishing a Google Drive folder that housed all essential materials, including presentation slides, source code, and
                    additional resources required for the assignment.
                 Furthermore, Aimee enhanced data visualization by creating a 3D scatterplot of the principal components, which provided clearer insights into the data's distribution. She also produced ROC plots for multiple models for Logistic Regression, PCA, Isomap, GNB, and Perceptron, and consolidated these
@@ -916,7 +921,7 @@ ul li{color:#34495e !important}
                  In addition to her analytical and organizational contributions, Aimee played a foundational role in the development of the DiabetesML website. She created the overall framework of the site, structured the table of contents, and authored the methods section, helping to ensure a clear and logical
                   presentation of the project's methodology. Aimee also served as an editor for the website content, reviewing and refining written sections to maintain consistency throughout.
                 </p>
-            </section>  
+            </section>
             <!-- Contributions End -->
 
             <section id="acknowledgements">
@@ -931,120 +936,120 @@ ul li{color:#34495e !important}
             <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
 
                 <div id="ref-abadi2016tensorflow" class="csl-entry mb-3" role="listitem">
-                    Abadi, M., et al. (2016). <em>TensorFlow: Large-scale machine learning on heterogeneous systems</em>. 
+                    Abadi, M., et al. (2016). <em>TensorFlow: Large-scale machine learning on heterogeneous systems</em>.
                     <a href="https://www.tensorflow.org/" target="_blank">https://www.tensorflow.org/</a>
                 </div>
-                
+
                 <div id="ref-agarwal2022machine" class="csl-entry mb-3" role="listitem">
-                    Agarwal, S., & Vadiwala, M. (2022). <em>Machine Learning in Diabetes Research</em>. 
+                    Agarwal, S., & Vadiwala, M. (2022). <em>Machine Learning in Diabetes Research</em>.
                     In <em>Machine Learning and Deep Learning in Medical Imaging</em>, 149–168. Chapman and Hall/CRC.
                 </div>
-                
+
                 <div id="ref-babitz2018kmeans" class="csl-entry mb-3" role="listitem">
                     Babitz, K. (2018). <em><a href="https://www.datacamp.com/tutorial/k-means-clustering-python" target="_blank">
                     Introduction to k-Means Clustering with scikit-learn in Python</a></em>. DataCamp.
                 </div>
-                
+
                 <div id="ref-battineni2020applications" class="csl-entry mb-3" role="listitem">
-                    Battineni, G., Chintalapudi, N., & Geetha, P. A. (2020). <em>Applications of Machine Learning in Chronic Disease Prediction</em>. 
+                    Battineni, G., Chintalapudi, N., & Geetha, P. A. (2020). <em>Applications of Machine Learning in Chronic Disease Prediction</em>.
                     <em>Journal of King Saud University - Computer and Information Sciences, 32</em>(7), 818–824.
                 </div>
-                
+
                 <div id="ref-bini2018artificial" class="csl-entry mb-3" role="listitem">
-                    Bini, C. (2018). <em>Artificial Intelligence in Orthopaedics: Current Applications and Future Trends</em>. 
+                    Bini, C. (2018). <em>Artificial Intelligence in Orthopaedics: Current Applications and Future Trends</em>.
                 </div>
-                
+
                 <div id="ref-cdc2024diabetes" class="csl-entry mb-3" role="listitem">
-                    Centers for Disease Control and Prevention. (2024, May 15). <em>Diabetes basics</em>. U.S. Department of Health & Human Services. 
+                    Centers for Disease Control and Prevention. (2024, May 15). <em>Diabetes basics</em>. U.S. Department of Health & Human Services.
                     <a href="https://www.cdc.gov/diabetes/about/?CDC_AAref_Val=https://www.cdc.gov/diabetes/basics/diabetes.html" target="_blank">
                     https://www.cdc.gov/diabetes/about/?CDC_AAref_Val=https://www.cdc.gov/diabetes/basics/diabetes.html</a>
                 </div>
-                
+
                 <div id="ref-harris2020numpy" class="csl-entry mb-3" role="listitem">
                     Harris, C. R., et al. (2020). <em><a href="https://www.nature.com/articles/s41586-020-2649-2" target="_blank">
                     Array computing with NumPy</a></em>. <em>Nature, 585</em>(7825), 357–362.
                 </div>
 
                  <div id="ref-geeksforgeeks2025isomap" class="csl-entry mb-3" role="listitem">
-                    GeeksforGeeks. (2025a, February 10). <em>Isomap: A non-linear dimensionality reduction technique</em>. 
+                    GeeksforGeeks. (2025a, February 10). <em>Isomap: A non-linear dimensionality reduction technique</em>.
                     <a href="https://www.geeksforgeeks.org/isomap-a-non-linear-dimensionality-reduction-technique/" target="_blank">
                     https://www.geeksforgeeks.org/isomap-a-non-linear-dimensionality-reduction-technique/</a>
                 </div>
 
                 <div id="ref-geeksforgeeks2025logistic" class="csl-entry mb-3" role="listitem">
-                    GeeksforGeeks. (2025, February 3). <em>Logistic regression in machine learning</em>. 
+                    GeeksforGeeks. (2025, February 3). <em>Logistic regression in machine learning</em>.
                     <a href="https://www.geeksforgeeks.org/understanding-logistic-regression/" target="_blank">
                     https://www.geeksforgeeks.org/understanding-logistic-regression/</a>
                 </div>
 
                  <div id="ref-keras2025sequential" class="csl-entry mb-3" role="listitem">
-                    Guide to the Sequential model - Keras Documentation. (2025). <em>Keras Documentation</em>. 
+                    Guide to the Sequential model - Keras Documentation. (2025). <em>Keras Documentation</em>.
                     <a href="https://faroit.com/keras-docs/1.0.1/getting-started/sequential-model-guide/" target="_blank">
                     https://faroit.com/keras-docs/1.0.1/getting-started/sequential-model-guide/</a>
                 </div>
-                
+
                 <div id="ref-hunter2007matplotlib" class="csl-entry mb-3" role="listitem">
                     Hunter, J. D. (2007). <em><a href="https://ieeexplore.ieee.org/document/4160265" target="_blank">
                     Matplotlib: A 2D graphics environment</a></em>. <em>Computing in Science & Engineering, 9</em>(3), 90–95.
                 </div>
-                
+
                 <div id="ref-martins2023naivebayes" class="csl-entry mb-3" role="listitem">
                     Martins, C. (2023). <em><a href="https://builtin.com/artificial-intelligence/gaussian-naive-bayes" target="_blank">
                     Gaussian Naive Bayes Explained With Scikit-Learn</a></em>. <a href="https://builtin.com/artificial-intelligence/gaussian-naive-bayes" target="_blank">
-                   https://builtin.com/artificial-intelligence/gaussian-naive-bayes/a>
+                   https://builtin.com/artificial-intelligence/gaussian-naive-bayes</a>
                 </div>
-                
+
                 <div id="ref-mayo2025type2" class="csl-entry mb-3" role="listitem">
-                    Mayo Clinic. (2025). <em>Type 2 diabetes: Symptoms and causes</em>. Mayo Foundation for Medical Education and Research. 
+                    Mayo Clinic. (2025). <em>Type 2 diabetes: Symptoms and causes</em>. Mayo Foundation for Medical Education and Research.
                     <a href="https://www.mayoclinic.org/diseases-conditions/type-2-diabetes/symptoms-causes/syc-20351193" target="_blank">
                     https://www.mayoclinic.org/diseases-conditions/type-2-diabetes/symptoms-causes/syc-20351193</a>
                 </div>
-                
+
                 <div id="ref-mckinney2010" class="csl-entry mb-3" role="listitem">
                     McKinney, W. (2010). <em>Data structures for statistical computing in Python</em>. Proceedings of the 9th Python in Science Conference.
                 </div>
-                
+
                 <div id="ref-microsoft2025copilot" class="csl-entry mb-3" role="listitem">
                     Microsoft. (2025). <em>Copilot (GPT-4) [Large Language Model]</em>. Copilot website.
                 </div>
-                
+
                 <div id="ref-navlani2024logistic" class="csl-entry mb-3" role="listitem">
-                    Navlani, A. (2024, August 11). <em>Understanding logistic regression in Python</em>. 
+                    Navlani, A. (2024, August 11). <em>Understanding logistic regression in Python</em>.
                     DataCamp. <a href="https://www.datacamp.com/tutorial/understanding-logistic-regression-python" target="_blank">
                     https://www.datacamp.com/tutorial/understanding-logistic-regression-python</a>
                 </div>
-                
+
                 <div id="ref-openai2025chatgpt" class="csl-entry mb-3" role="listitem">
-                    OpenAI. (2025). <em>ChatGPT (May 13 version) [Large language model]</em>. 
+                    OpenAI. (2025). <em>ChatGPT (May 13 version) [Large language model]</em>.
                     <a href="https://chat.openai.com/" target="_blank">https://chat.openai.com/</a>
                 </div>
-                
+
                 <div id="ref-pedregosa2011scikit" class="csl-entry mb-3" role="listitem">
                     Pedregosa, F., et al. (2011). <em><a href="https://jmlr.csail.mit.edu/papers/v12/pedregosa11a.html" target="_blank">
                     Scikit-learn: Machine learning in Python</a></em>. <em>Journal of Machine Learning Research, 12</em>, 2825–2830.
                 </div>
-                
+
                 <div id="ref-statquest2025" class="csl-entry mb-3" role="listitem">
                     StatQuest. (2025). <em><a href="https://statquest.org/pca-clearly-explained/" target="_blank">
                     PCA clearly explained</a></em>.<a href="https://statquest.org/pca-clearly-explained/" target="_blank">
                     https://statquest.org/pca-clearly-explained/</a>
                 </div>
-                
+
                 <div id="ref-uci2016pima" class="csl-entry mb-3" role="listitem">
-                    UCI Machine Learning Repository. (2016). <em>Pima Indians Diabetes Database</em>. Kaggle. 
+                    UCI Machine Learning Repository. (2016). <em>Pima Indians Diabetes Database</em>. Kaggle.
                     <a href="https://www.kaggle.com/datasets/uciml/pima-indians-diabetes-database" target="_blank">
                     https://www.kaggle.com/datasets/uciml/pima-indians-diabetes-database</a>
                 </div>
-                
+
                 <div id="ref-vanderplas2022pca" class="csl-entry mb-3" role="listitem">
-                    VanderPlas, J. (2022, December 1). <em>In Depth: Principal Component Analysis</em>. 
-                    In Python Data Science Handbook. 
+                    VanderPlas, J. (2022, December 1). <em>In Depth: Principal Component Analysis</em>.
+                    In Python Data Science Handbook.
                     <a href="https://jakevdp.github.io/PythonDataScienceHandbook/" target="_blank">
                     https://jakevdp.github.io/PythonDataScienceHandbook/</a>
                 </div>
-                
+
                 <div id="ref-who2024diabetes" class="csl-entry mb-3" role="listitem">
-                    World Health Organization. (2024, November 14). <em>Diabetes</em>. 
+                    World Health Organization. (2024, November 14). <em>Diabetes</em>.
                     <a href="https://www.who.int/news-room/fact-sheets/detail/diabetes" target="_blank">
                     https://www.who.int/news-room/fact-sheets/detail/diabetes</a>
                 </div>
@@ -1058,6 +1063,7 @@ ul li{color:#34495e !important}
                       <nav class="space-y-3">
                       <a href="#introduction" class="block text-black text-base hover:underline">Introduction</a>
                       <a href="#methods" class="block text-black text-base hover:underline">Methods</a>
+                      <a href="#KAL_Code" class="ml-4 block text-black text-base font-bold hover:underline">KAL Code</a>
                       <a href="#results" class="block text-black text-base hover:underline">Results</a>
                       <a href="#classification_models_results" class="ml-4 block text-black text-base hover:underline">Overall Comparison of Algorithms</a>
                       <a href="#logistic_regression_results" class="ml-4 block text-black text-base hover:underline">Logistic Regression</a>
